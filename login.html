@@ -1,37 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Log In</title>
+</head>
+<body>
 
-  <body>
-    <main>
-      <h2>Login</h2>
-      <form action="login.html" method="post">
-        <label for="email">Email: </label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="type in your email..."
-        />
-        <br />
-        <br />
+<header>
+  <h1><a href="index.html">Habit Tracker</a></h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="signup.html">Sign Up</a> |
+    <a href="login.html">Log In</a> |
+    <a href="settings.html">Settings</a>
+  </nav>
+</header>
 
-        <label for="password">Password: </label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="type in your password..."
-        />
-        <br />
-        <br />
+<main>
+  <section>
+    <h2>Log In</h2>
 
-        <input type="submit" value="Log in" />
-      </form>
-    </main>
-  </body>
+    <form action="#" method="post">
+      <label for="login-email">Email:</label><br>
+      <input type="email" id="login-email" name="login-email"><br><br>
+
+      <label for="login-password">Password:</label><br>
+      <input type="password" id="login-password" name="login-password"><br><br>
+
+      <input type="submit" value="Log In">
+    </form>
+
+  </section>
+</main>
+
+ <footer>
+      <hr />
+      <hr />
+      <p>Habit Tracker - Web Centric Progaming Group Project - Phase 1</p>
+
+      <p>&copy; 2026 Habit Tracker. All rights reserved.</p>
+
+      <nav>
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact us</a>
+      </nav>
+    </footer>
+
+</body>
 </html>
