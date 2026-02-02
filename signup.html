@@ -1,37 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-  </head>
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+</head>
+<body>
 
-  <body>
-    <main>
-      <h2>Sign up</h2>
-      <form action="signup.html" method="post">
-        <label for="email">Email: </label>
-        <input
-          type="email"
-          name="email"
-          id="email"
-          placeholder="type in your email..."
-        />
-        <br />
-        <br />
+<header>
+  <h1>Habit Tracker</h1>
+  <nav>
+    <a href="index.html">Home</a> |
+    <a href="about.html">About</a> |
+    <a href="contact.html">Contact</a> |
+    <a href="signup.html">Sign Up</a> |
+    <a href="login.html">Log In</a> |
+    <a href="settings.html">Settings</a>
+  </nav>
+</header>
 
-        <label for="password">Password: </label>
-        <input
-          type="password"
-          name="password"
-          id="password"
-          placeholder="type in your password..."
-        />
-        <br />
-        <br />
+<main>
+  <section>
+    <h2>Create Account</h2>
 
-        <input type="submit" value="Sign up" />
-      </form>
-    </main>
-  </body>
+    <form action="#" method="post">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="email">Email:</label><br>
+      <input type="email" id="email" name="email"><br><br>
+
+      <label for="password">Password:</label><br>
+      <input type="password" id="password" name="password"><br><br>
+
+      
+
+      <label for="country">Country:</label><br>
+      <select id="country" name="country">
+        <option value="uk">Canada</option>
+        <option value="us">USA</option>
+        <option value="other">Other</option>
+      </select><br><br>
+
+      <input type="submit" value="Sign Up">
+    </form>
+
+  </section>
+</main>
+
+<footer>
+  <p>Web Dev Group Project</p>
+</footer>
+
+</body>
 </html>
