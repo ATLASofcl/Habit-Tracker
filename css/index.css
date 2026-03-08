@@ -1,0 +1,221 @@
+header {
+  width: 100%;
+  height: 50px;
+  background-color: #313130;
+  display: flex;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.header-title {
+  align-self: center;
+  margin-left: auto;
+}
+
+.header-title h1 {
+  color: white;
+  font-size: 1.5em;
+  margin: 0 2vh;
+}
+
+.hamburger-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 1vh;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.hamburger-icon {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.hamburger-icon span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+}
+
+.nav-panel {
+  position: fixed;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  height: calc(100dvh - 50px);
+  z-index: 1;
+  background-color: #313130;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.5);
+  clip-path: inset(0 -20px -20px 0);
+  width: 40vw;
+  max-width: 250px;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(-100%);
+  transition:
+    transform 0.3s ease,
+    visibility 0s 0.3s;
+  visibility: hidden;
+}
+
+#menu-toggle:checked ~ .nav-panel {
+  transform: translateX(0);
+  visibility: visible;
+  transition:
+    transform 0.3s ease,
+    visibility 0s 0s;
+}
+
+.nav-list {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 3vh 10%;
+  gap: 2vh;
+  list-style: none;
+  flex: 1;
+}
+
+.nav-list li:last-child {
+  margin-top: auto;
+}
+
+.nav-list li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2em;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2vh 2vw;
+  padding-bottom: 10vh;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.habit {
+  display: grid;
+  grid-template-areas:
+    "image name checkbox"
+    "table table table";
+  grid-template-columns: auto 1fr auto;
+  column-gap: 20px;
+  row-gap: 10px;
+  background-color: #313130;
+  padding: 10px 10px;
+  border-radius: 20px;
+  color: white;
+  width: 300px;
+}
+
+.habit-icon {
+  grid-area: image;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--habit-color);
+}
+
+.habit-name {
+  grid-area: name;
+  align-self: center;
+  font-size: 1.2em;
+}
+
+.habit-checkbox {
+  grid-area: checkbox;
+  width: 50px;
+  height: 50px;
+  background-color: white;
+  border-radius: 15px;
+  align-self: center;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.habit-table {
+  grid-area: table;
+  display: grid;
+  place-items: center;
+  gap: 15px;
+  grid-template-columns: repeat(7, 1fr);
+  background-color: #181716;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+.habit-dot {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #555;
+}
+
+.habit-dot.completed {
+  background-color: var(--habit-color);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 2vw, 12px);
+  width: 90vw;
+  max-width: 350px;
+  background-color: #313130;
+  padding: 10px 15px;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.current-date {
+  display: block;
+  padding: 12px 12px;
+  color: white;
+  background-color: #232322;
+  border-radius: 20px;
+  font-size: clamp(0.75em, 2.5vw, 1em);
+  white-space: nowrap;
+}
+
+.decrease-btn,
+.increase-btn {
+  background-color: #232322;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  font-size: 1.25em;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.add-btn {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 35px;
+  height: 35px;
+  font-size: 1.25em;
+  font-weight: bold;
+  flex-shrink: 0;
+}

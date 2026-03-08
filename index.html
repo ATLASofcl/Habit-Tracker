@@ -3,100 +3,189 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Habit Tracker</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <title>Document</title>
   </head>
   <body>
     <header>
-      <h1><a href="index.html">Habit Tracker</a></h1>
-      <p>
-        Track your habits and stay motivated! (Phase 1: content only) |
-        <a href="signup.html">Login / Sign Up</a> |
-        <a href="settings.html">Settings</a>
-      </p>
-      <hr>
-
-      <nav>
-        <a href="index.html">Home</a> | <a href="new-habit.html">New Habit</a> |
-        <a href="progress.html">Progress</a> |
-        <a href="feedback.html">Rate Us</a> | <a href="about.html">About</a> |
-        <a href="contact.html">Contact Us</a> |
-      </nav>
-
-      <hr><hr>
-    </header>
-
-    <main>
-      <div>
-        <h2><time datetime="2026-01-28">January 28, 2026</time> — Wednesday</h2>
-        <p>
-          <a href="new-habit.html">Create New Habit</a> |
-          <a href="progress.html">View your progress</a>
-        </p>
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-toggle" />
+        <label
+          for="menu-toggle"
+          class="hamburger-icon"
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="nav-panel">
+          <ul class="nav-list">
+            <li><a href="progress.html">Progress</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+        </nav>
       </div>
-      <hr>
-
-      <section>
-        <dl>
-          <dt><h3>Drink Water</h3></dt>
-          <dd>
-            <p>Make sure to drink enough water (cup size 240ml)</p>
-            <label for="water-habit">Today's Water Intake:</label>
-            <input
-              name="water-habit"
-              id="water-habit"
-              type="number"
-              min="0"
-              max="100"
-              value="0"
-            />/8 in cups
-          </dd>
-          <hr>
-
-          <dt><h3>Work Out</h3></dt>
-          <dd>
-            <p>Dont forget to workout</p>
-            <label for="workout-habit">Worked Out Today: </label>
-            <input type="checkbox" name="workout-habit" id="workout-habit" />
-          </dd>
-          <hr>
-
-          <dt><h3>Reading</h3></dt>
-          <dd>
-            <p>Currently reading: ---</p>
-            <label for="reading-habit">Read 10 Pages:</label>
-            <input type="checkbox" name="reading-habit" id="reading-habit" />
-          </dd>
-          <hr>
-
-          <dt><h3>Bonus Check in</h3></dt>
-          <dd>
-            <p>How are you feeling today (select the best fitting image)</p>
-            <label for="mood">Choose: </label>
-            <input type="radio" name="mood" id="mood-angry" value="angry" />😡
-            <input type="radio" name="mood" id="mood-upset" value="upset" />😠
-            <input type="radio" name="mood" id="mood-neutral"value="neutral"/>😐
-            <input type="radio" name="mood" id="mood-happy" value="happy" />☺️
-            <input type="radio" name="mood" id="mood-excited" value="excited"/>😃 
-            <br><br>
-
-            <label for="stress-meter">How stressed were you?</label>
-            <input type="range" name="stress-meter" id="stress-meter" min="0" max="100" value="50" />
-          </dd>
-        </dl>
-      </section>
+      <div class="header-title"><h1>Habit Tracker</h1></div>
+    </header>
+    <main>
+      <div class="habit" style="--habit-color: #457ebd">
+        <div class="habit-icon"></div>
+        <div class="habit-name">Drink Water</div>
+        <div class="habit-checkbox"></div>
+        <div class="habit-table">
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot"></div>
+          <div class="habit-dot"></div>
+        </div>
+      </div>
+      <div class="habit" style="--habit-color: #f3ca4e">
+        <div class="habit-icon"></div>
+        <div class="habit-name">Drink Water</div>
+        <div class="habit-checkbox"></div>
+        <div class="habit-table">
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot"></div>
+          <div class="habit-dot"></div>
+        </div>
+      </div>
+      <div class="habit" style="--habit-color: #98c33d">
+        <div class="habit-icon"></div>
+        <div class="habit-name">Reading</div>
+        <div class="habit-checkbox"></div>
+        <div class="habit-table">
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot"></div>
+          <div class="habit-dot"></div>
+        </div>
+      </div>
+      <div class="habit" style="--habit-color: #664f8c">
+        <div class="habit-icon"></div>
+        <div class="habit-name">Sleep</div>
+        <div class="habit-checkbox"></div>
+        <div class="habit-table">
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot completed"></div>
+          <div class="habit-dot"></div>
+          <div class="habit-dot"></div>
+        </div>
+      </div>
     </main>
-
     <footer>
-      <hr>
-      <hr>
-      <p>Habit Tracker - Web Centric Progaming Group Project - Phase 1</p>
-
-      <p>&copy; 2026 Habit Tracker. All rights reserved.</p>
-
-      <nav>
-        <a href="about.html">About</a> |
-        <a href="contact.html">Contact us</a>
-      </nav>
+      <span class="current-date">Friday, Mar 20, 2026</span>
+      <button class="decrease-btn" aria-label="Previous day">&lt;</button>
+      <button class="increase-btn" aria-label="Next day">&gt;</button>
+      <button class="add-btn" aria-label="Add habit">+</button>
     </footer>
   </body>
 </html>
