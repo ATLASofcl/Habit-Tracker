@@ -14,7 +14,7 @@ main {
   gap: 10px;
 }
 
-.new-habit-form{
+.new-habit{
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
@@ -89,3 +89,36 @@ tr td:first-child{
     width: 100%;
 }
 
+.form-actions{
+    background-color: #313130;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 40 px;
+    justify-content: space-evenly;
+    border: #181716 solid 2px;
+}
+
+.btn-clear, .btn-submit{
+    margin: 5px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.btn-clear{
+    width: 25%;
+    background-color: #181716;
+    border: none;
+}
+
+.btn-submit{
+    width: 50%;
+    background-color: white;
+    color: black;
+    border: none;
+}
