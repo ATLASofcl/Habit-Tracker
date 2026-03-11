@@ -5,155 +5,203 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New Habit</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/header-menu.css" />
+        <link rel="stylesheet" href="css/new-habit.css" />
+
+
 </head>
 
 <body>
     <header>
-      <h1><a href="index.html">Habit Tracker</a></h1>
-      <p>Track your habits and stay motivated! (Phase 1: content only) |
-      <a href="signup.html">Login / Sign Up</a> |
-      <a href="settings.html">Settings</a>
-      </p>
-      <hr />
-
-        <nav>
-            <a href="index.html">Home</a> | 
-            <a href="new-habit.html">New Habit</a> |
-            <a href="progress.html">Progress</a> | 
-            <a href="feedback.html">Rate Us</a> | 
-            <a href="about.html">About</a> | 
-            <a href="contact.html">Contact Us</a> | 
+        <div class="hamburger-menu">
+        <input type="checkbox" id="menu-toggle" />
+        <label
+            for="menu-toggle"
+            class="hamburger-icon"
+            aria-label="Toggle menu"
+        >
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <nav class="nav-panel">
+            <ul class="nav-list">
+            <li><a href="progress.html">Progress</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="settings.html">Settings</a></li>
+            </ul>
         </nav>
+        </div>
+        <div class="header-title"><h1>Habit Tracker</h1></div>
+    </header>
 
-      <hr/><hr>
-  </header>
 
     <main>
-        <h2>Create a New Habit</h2>
-        <p>Add a habit you want to track. Fill in the details below.</p>
-        <hr />
+        <div class="new-habit-title">New habit: </div>
 
-        <form action="#" method="get">
-            <section>
-                <h3>Basic Information</h3>
-                <table>
-                    <tbody>
+        <form  action="mailto:example@email.com" method="post" enctype="text/plain">
+
+            <div class="new-habit">
+                <div class="habit-info">
+
+                    <table>
                         <tr>
-                            <td><label for="habit-name">Habit name:</label></td>
-                            <td>
-                                <input type="text" name="habit-name" id="habit-name" size="30" placeholder="e.g. Drink Water" required />
-                            </td>
+                            <td><label for="habit-name">Habit Name:</label></td>
+                            <td><input type="text" id="habit-name" name="habit-name" required></td>
                         </tr>
+
                         <tr>
-                            <td><label for="habit-desc">Description (optional):</label></td>
-                            <td>
-                                <textarea name="habit-desc" id="habit-desc" cols="40" rows="3" placeholder="A short description or reminder for this habit."></textarea>
-                            </td>
+                            <td><label for="habit-emoji">Enter Emoji</label></td>
+                            <td><input type="text" id="habit-emoji" name="habit-emoji"></td>
                         </tr>
+
+                        <tr>
+                            <td><label for="habit-description">Description:</label></td>
+                            <td><textarea name="habit-description" id="habit-description" rows="4" cols="20"></textarea></td>
+                        </tr>
+
                         <tr>
                             <td><label for="habit-category">Category:</label></td>
+                            <td><select name="habit-category" id="habit-category">
+                                <option value="Health">Health</option>
+                                <option value="Productivity">Productivity</option>
+                                <option value="Learning">Learning</option>
+                            </select></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="habit-color">Color:</label></td>
                             <td>
-                                <select name="habit-category" id="habit-category">
-                                    <option value="health">Health</option>
-                                    <option value="fitness">Fitness</option>
-                                    <option value="learning">Learning</option>
-                                    <option value="mindfulness">Mindfulness</option>
-                                    <option value="other">Other</option>
+                                <div class="color-picker-container">
+                                    <label>
+                                        <input type="radio" name="habit-color" value="FF595E"  checked>
+                                        <div class="red-color-dot" style="--habit-color: #FF595E"></div>
+                                    </label>
+
+                                    <label>
+                                        <input class="yellow" type="radio" id="habit-color-yellow" name="habit-color" value="FFCA3A" >
+                                        <div class="yellow-color-dot" style="--habit-color: #FFCA3A"></div>
+                                    </label>
+
+                                    <label>
+                                        <input class="blue" type="radio" id="habit-color-blue" name="habit-color" value="1982C4">
+                                        <div class="blue-color-dot" style="--habit-color: #1982C4"></div>
+                                    </label>
+
+                                    <label>
+                                        <input class="green" type="radio" id="habit-color-green" name="habit-color" value="8AC926">
+                                        <div class="green-color-dot" style="--habit-color: #8AC926"></div>
+                                    </label>
+
+                                    <label>
+                                        <input class="purple" type="radio" id="habit-color-purple" name="habit-color" value="6A4C93">
+                                        <div class="purple-color-dot" style="--habit-color: #6A4C93"></div>
+                                    </label>
+
+                                    <label>
+                                        <input class="pink" type="radio" id="habit-color-pink" name="habit-color" value="ffc6ff">
+                                        <div class="pink-color-dot" style="--habit-color: #ffc6ff"></div>
+                                    </label>
+
+                                    <label>
+                                        <input class="orange" type="radio" id="habit-color-orange" name="habit-color" value="fb5607">
+                                        <div class="orange-color-dot" style="--habit-color: #fb5607"></div>
+                                    </label>
+                                    <label>
+                                        <input class="brown" type="radio" id="habit-color-brown" name="habit-color" value="9c6644">
+                                        <div class="brown-color-dot" style="--habit-color: #9c6644"></div>
+                                    </label>
+                                    <label>
+                                        <input class="cyan" type="radio" id="habit-color-cyan" name="habit-color" value="9bf6ff">
+                                        <div class="cyan-color-dot" style="--habit-color: #9bf6ff"></div>
+                                    </label>
+
+                                    <label>
+                                        <input class="hotpink" type="radio" id="habit-color-hotpink" name="habit-color" value="f72585">
+                                        <div class="hotpink-color-dot" style="--habit-color: #f72585"></div>
+                                    </label>
+                                </div>
+                            </td>
+                        </tr>
+
+                    </table>
+
+                </div>
+
+                <div class="habit-goals">
+                    <table class="goals-container">
+                        <tr>
+                            <td><label for="goal">How often</label></td>
+                            <td><input type="number" id="goal" name="goal" min="1" max="100" required></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="unit">Unit</label></td>
+                            <td>
+                                <select name="unit" id="unit">
+                                    <option value="cup">Cup</option>
+                                    <option value="pages">Pages</option>
+                                    <option value="minutes">Minutes</option>
+                                    <option value="hours">Hours</option>
                                 </select>
                             </td>
                         </tr>
-                    </tbody>
-                </table>
-            </section>
-            <br />
+                    </table>
+                </div>
 
-            <section>
-                <h3>Goal &amp; Frequency</h3>
-                <table>
-                    <tbody>
-                        <tr>
-                            <td><label for="habit-frequency">How often?</label></td>
-                            <td>
-                                <select name="habit-frequency" id="habit-frequency">
-                                    <option value="daily">Daily</option>
-                                    <option value="weekdays">Weekdays only</option>
-                                    <option value="weekly">Weekly</option>
-                                    <option value="custom">Custom</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label for="habit-goal">Goal (optional):</label></td>
-                            <td>
-                                <input type="text" name="habit-goal" id="habit-goal" size="30" placeholder="e.g. 8 glasses, 10 pages" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><label for="habit-unit">Unit (optional):</label></td>
-                            <td>
-                                <input type="text" name="habit-unit" id="habit-unit" size="20" placeholder="e.g. cups, pages, minutes" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-            <br />
+                <div class="habit-reminder">
+                    <table>
+                        <caption>Reminder (optional)</caption>
 
-            <section>
-                <h3>Reminder (optional)</h3>
-                <table>
-                    <tbody>
                         <tr>
-                            <td><label for="reminder-time">Remind me at:</label></td>
-                            <td>
-                                <input type="time" name="reminder-time" id="reminder-time" value="09:00" />
+                            <td><label for="time">At (time)</label></td>
+                            <td><input type="time" name="time" id="time"></td>
+                        </tr>
+
+                        <tr>
+                            <td><label for="on-days">on days</label></td>
+                            <td class="on-days-selector">
+                                <input type="radio" name="on-days" id="mon" value="monday">
+                                <label for="mon">Mon</label>
+
+                                <input type="radio" name="on-days" id="tue" value="tuesday">
+                                <label for="tue">Tue</label>
+
+                                <input type="radio" name="on-days" id="wed" value="wednesday">
+                                <label for="wed">Wed</label>
+
+                                <input type="radio" name="on-days" id="thu" value="thursday">
+                                <label for="thu">Thu</label>
+
+                                <input type="radio" name="on-days" id="fri" value="friday">
+                                <label for="fri">Fri</label>
+
+                                <input type="radio" name="on-days" id="sat" value="saturday">
+                                <label for="sat">Sat</label>
+
+                                <input type="radio" name="on-days" id="sun" value="sunday">
+                                <label for="sun">Sun</label>
                             </td>
                         </tr>
-                        <tr>
-                            <td>On days:</td>
-                            <td>
-                                <input type="checkbox" name="reminder-mon" id="reminder-mon" />
-                                <label for="reminder-mon">Mon</label>
-                                <input type="checkbox" name="reminder-tue" id="reminder-tue" />
-                                <label for="reminder-tue">Tue</label>
-                                <input type="checkbox" name="reminder-wed" id="reminder-wed" />
-                                <label for="reminder-wed">Wed</label>
-                                <input type="checkbox" name="reminder-thu" id="reminder-thu" />
-                                <label for="reminder-thu">Thu</label>
-                                <input type="checkbox" name="reminder-fri" id="reminder-fri" />
-                                <label for="reminder-fri">Fri</label>
-                                <input type="checkbox" name="reminder-sat" id="reminder-sat" />
-                                <label for="reminder-sat">Sat</label>
-                                <input type="checkbox" name="reminder-sun" id="reminder-sun" />
-                                <label for="reminder-sun">Sun</label>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <input type="submit" value="Create Habit" />
-                            </td>
-                            <td>
-                                <input type="reset" value="Clear Form" />
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
+                    </table>
+                </div>
+            </div>
+            
+
+            <div class="form-actions">
+                <input class="btn-clear" type="reset" value="Clear">
+                <input class="btn-submit" type="submit" value="Create Habit">
+            </div>
+
         </form>
+
     </main>
 
     <footer>
-      <hr><hr>
-      <p>
-          Habit Tracker - Web Centric Progaming Group Project - Phase 1
-      </p>
 
-      <p>&copy; 2026 Habit Tracker. All rights reserved.</p>
-
-      <nav>
-          <a href="about.html">About</a> | 
-          <a href="contact.html">Contact us</a>
-      </nav>
     </footer>
 </body>
 

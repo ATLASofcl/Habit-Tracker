@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+.new-habit-title {
+    color: white;
+    font-size: 1.2em;
+}
+
+main {
+  padding: 2vh 2vw;
+  padding-bottom: 10vh;
+  margin: 0 auto;
+  gap: 10px;
+}
+
+.new-habit{
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    gap: 10px;
+    padding-top: 10px;
+}
+
+.habit-info, .habit-goals, .habit-reminder{
+    width: 300px;
+    background-color: #313130;
+    padding: 10px;
+    border-radius: 20px;
+    color: white;
+}
+
+.new-habit-form  table{
+    border-spacing: 10px;
+}
+
+.new-habit-form select {
+    width: 100%;
+}
+
+.color-picker-container{
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    border: 1px solid gray;
+    padding: 10px 10px 10px 20px;
+    border-radius: 25px;
+}
+
+.color-picker-container input[type="radio"]{
+    display: none;
+}
+
+[class*="color-dot"] {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: var(--habit-color);
+    cursor: pointer;
+    box-sizing: border-box;
+}   
+
+input[type="radio"]:checked + [class*="color-dot"] {
+    border: 2px solid white;
+}
+
+.habit-reminder caption{
+    justify-content: left;
+    padding-bottom: 10px;
+}
+
+.on-days-selector{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+input, select, textarea {
+    background-color: #313130;
+    color: white;
+    border: 1px solid gray;
+    max-width: 160px;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+tr td:first-child{
+    width: 100%;
+}
+
+.form-actions{
+    background-color: #313130;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    width: 100%;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    height: 40 px;
+    justify-content: space-evenly;
+    border: #181716 solid 2px;
+}
+
+.btn-clear, .btn-submit{
+    margin: 5px;
+    height: 30px;
+    cursor: pointer;
+}
+
+
+.btn-clear{
+    width: 25%;
+    background-color: #181716;
+    border: none;
+}
+
+.btn-submit{
+    width: 50%;
+    background-color: white;
+    color: black;
+    border: none;
+}
