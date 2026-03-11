@@ -1,12 +1,13 @@
+* {
+    box-sizing: border-box;
+}
+
 .new-habit-title {
     color: white;
     font-size: 1.2em;
 }
 
 main {
-  /*display: flex;
-  flex-wrap: wrap;
-  justify-content: center;*/
   padding: 2vh 2vw;
   padding-bottom: 10vh;
   margin: 0 auto;
@@ -17,23 +18,25 @@ main {
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
-    background-color: red;
     margin: 0 auto;
     gap: 10px;
     padding-top: 10px;
-
 }
 
-.habit-info, .habit-goals{
+.habit-info, .habit-goals, .habit-reminder{
     width: 300px;
     background-color: #313130;
     padding: 10px;
     border-radius: 20px;
-    
+    color: white;
 }
 
 .new-habit-form  table{
     border-spacing: 10px;
+}
+
+.new-habit-form select {
+    width: 100%;
 }
 
 .color-picker-container{
@@ -42,9 +45,10 @@ main {
     flex-wrap: wrap;
     border: 1px solid gray;
     padding: 10px 10px 10px 20px;
+    border-radius: 25px;
 }
 
-input[type="radio"]{
+.color-picker-container input[type="radio"]{
     display: none;
 }
 
@@ -60,3 +64,28 @@ input[type="radio"]{
 input[type="radio"]:checked + [class*="color-dot"] {
     border: 2px solid white;
 }
+
+.habit-reminder caption{
+    justify-content: left;
+    padding-bottom: 10px;
+}
+
+.on-days-selector{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+input, select, textarea {
+    background-color: #313130;
+    color: white;
+    border: 1px solid gray;
+    max-width: 160px;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+tr td:first-child{
+    width: 100%;
+}
+
