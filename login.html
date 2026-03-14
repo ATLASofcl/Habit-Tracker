@@ -1,50 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Log In</title>
-</head>
-<body>
 
-<header>
-  <h1><a href="index.html">Habit Tracker</a></h1>
-  <nav>
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="signup.html">Sign Up</a> |
-    <a href="login.html">Log In</a> |
-  </nav>
-</header>
+  <head>
+    <meta charset="UTF-8">
+    <title>Log In</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
+  </head>
 
-<main>
-  <section>
-    <h2>Log In</h2>
+  <body class="login">
 
-    <form action="#" method="post">
-      <label for="login-email">Email:</label><br>
-      <input type="email" id="login-email" name="login-email"><br><br>
+    <header>
+      <div class="header-title"><h1>Habit Tracker</h1></div>
+    </header>
 
-      <label for="login-password">Password:</label><br>
-      <input type="password" id="login-password" name="login-password"><br><br>
+    <main>
 
-      <input type="submit" value="Log In">
-    </form>
+      <div class="login-container">
 
-  </section>
-</main>
+        <form class="login-box">
 
- <footer>
-      <hr />
-      <hr />
-      <p>Habit Tracker - Web Centric Progaming Group Project - Phase 1</p>
+          <h2>Log In:</h2>
 
-      <p>&copy; 2026 Habit Tracker. All rights reserved.</p>
+          <label for="login-email">Email:</label>
+          <input id="login-email" name="email" type="email" autocomplete="email">
 
-      <nav>
-        <a href="about.html">About</a> |
-        <a href="contact.html">Contact us</a>
-      </nav>
-    </footer>
+          <label for="login-password">Password:</label>
+          <input id="login-password" name="password" type="password" autocomplete="current-password">
 
-</body>
+          <input class="login-btn" type="submit" value="Log In">
+
+        </form>
+
+        <div class="signup-box">
+          <p>Don't have an account?</p>
+          <a class="signup-btn" href="signup.html">Sign Up</a>
+        </div>
+
+      </div>
+
+    </main>
+  </body>
 </html>
