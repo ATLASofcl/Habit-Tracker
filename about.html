@@ -4,70 +4,101 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About Us</title>
+    <link rel="stylesheet" href="css/about.css" />
   </head>
 
   <body>
     <header>
-      <h1><a href="index.html">Habit Tracker</a></h1>
-      <p>
-        Track your habits and stay motivated! (Phase 1: content only) |
-        <a href="signup.html">Login / Sign Up</a> |
-        <a href="settings.html">Settings</a>
-      </p>
-      <hr />
-
-      <nav>
-        <a href="index.html">Home</a> | <a href="new-habit.html">New Habit</a> |
-        <a href="progress.html">Progress</a> |
-        <a href="feedback.html">Rate Us</a> | <a href="about.html">About</a> |
-        <a href="contact.html">Contact Us</a> |
-      </nav>
-
-      <hr />
-      <hr />
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-toggle" />
+        <label
+          for="menu-toggle"
+          class="hamburger-icon"
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="nav-panel">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="progress.html">Progress</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-title"><h1>Habit Tracker</h1></div>
     </header>
 
     <main>
-      <h1>About us</h1>
+      <div class="about-wrapper">
+        <div class="about-card">
+          <div class="about-container">
+            <h1>About us</h1>
+            <p>
+              We are a company that <b>genuinely</b> cares about our users'
+              health! We want everyone to set goals and achieve them as soon as
+              possible, while growing as an individual and developing useful
+              life skills!
+            </p>
+          </div>
+        </div>
 
-      <p>
-        We are a company that <b>genuinely</b> cares about our users' health! We
-        want everyone to set goals and achieve them as soon as possible, while
-        growing as an individual and developing useful life skills!
-      </p>
+        <div class="about-card">
+          <p>What we can promise:</p>
 
-      <p>What we can promise:</p>
-      <dl>
-        <dt>Results!</dt>
-          <dd>-99% people are satisfied after using our website</dd>
-          <br>
-        <dt>Cost-free!</dt>
-          <dd>-Our startup is 100% free!</dd>
-          <br>
-        <dt>Why you should track your habits</dt> 
-          <dd>
-            <a href="https://youtu.be/Wcs2PFz5q6g?si=ri_SnUhh9qfoETdc">-Click here to a video habits and why you should track them</a>
-          </dd>
-          <br>
+          <dl>
+            <dt>Results!</dt>
+            <dd>-99% people are satisfied after using our website</dd>
 
-        <dt>Articles about Habits!</dt>
-          <dd>
-            <a href="https://www.thepositivepsychologypeople.com/habits-to-happiness/">
-              <img src="/assets/img/Braco-Blog.jpg" alt="Break bad habits Build goood habits" height="200" width="300">
-            </a>
-            <a href="https://www.health.harvard.edu/blog/five-healthy-habits-net-more-healthy-years-2020021918907">
-              <img src="assets/img/GettyImages-1151196088.jpg" alt="Change your habits change your life" height="200" width="300">
-            </a>
-          </dd>
+            <dt>Cost-free!</dt>
+            <dd>-Our startup is 100% free!</dd>
+        </div>
 
-      </dl>
-      
+        <div class="about-card">
+            <dt>Why you should track your habits</dt>
+            <dd class="hyperlink">
+              <a href="https://youtu.be/Wcs2PFz5q6g?si=ri_SnUhh9qfoETdc">
+                Click here to a video habits and why you should track them
+              </a>
+            </dd>
+
+            <dt>Articles about Habits!</dt>
+
+            <dd class="article-images">
+              <a
+                href="https://www.thepositivepsychologypeople.com/habits-to-happiness/"
+              >
+                <img
+                  src="/assets/img/Braco-Blog.jpg"
+                  alt="Break bad habits Build goood habits"
+                  height="200"
+                  width="300"
+                />
+              </a>
+
+              <a
+                href="https://www.health.harvard.edu/blog/five-healthy-habits-net-more-healthy-years-2020021918907"
+              >
+                <img
+                  src="assets/img/GettyImages-1151196088.jpg"
+                  alt="Change your habits change your life"
+                  height="200"
+                  width="300"
+                />
+              </a>
+            </dd>
+          </dl>
+        </div>
+      </div>
     </main>
 
     <footer>
-      <hr />
-      <hr />
-      <p>Habit Tracker - Web Centric Progaming Group Project - Phase 1</p>
+     
+      <p>Habit Tracker - Web Centric Progaming Group Project - Phase 2</p>
 
       <p>&copy; 2026 Habit Tracker. All rights reserved.</p>
 
@@ -79,9 +110,10 @@
       <p>
         Image credits:
         <a href="https://www.health.harvard.edu/">Harvard Health Publishing</a>,
-        <a href="https://www.thepositivepsychologypeople.com/">The Positive Psychology People</a>.
-        Used for educational purposes only.
-      </p>  
+        <a href="https://www.thepositivepsychologypeople.com/"
+          >The Positive Psychology People</a
+        >. Used for educational purposes only.
+      </p>
     </footer>
   </body>
 </html>
