@@ -1,53 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Sign Up</title>
-</head>
-<body>
 
-<header>
-  <h1><a href="index.html">Habit Tracker</a></h1>
-  <nav>
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="signup.html">Sign Up</a> |
-    <a href="login.html">Log In</a> |
-  </nav>
-</header>
+  <head>
+    <meta charset="UTF-8">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/signup.css" />
+  </head>
 
-<main>
-  <section>
-    <h2>Create Account</h2>
+  <body class="signup">
 
-    <form action="#" method="post">
-      <label for="name">Name:</label><br>
-      <input type="text" id="name" name="name"><br><br>
+    <header>
+      <div class="header-title"><h1>Habit Tracker</h1></div>
+    </header>
 
-      <label for="email">Email:</label><br>
-      <input type="email" id="email" name="email"><br><br>
+    <main>
 
-      <label for="password">Password:</label><br>
-      <input type="password" id="password" name="password"><br><br>
+      <div class="signup-container">
 
-      
+        <form class="signup-form">
 
-      <label for="country">Country:</label><br>
-      <select id="country" name="country">
-        <option value="uk">Canada</option>
-        <option value="us">USA</option>
-        <option value="other">Other</option>
-      </select><br><br>
+          <h2>Sign Up:</h2>
 
-      <input type="submit" value="Sign Up">
-    </form>
+          <label for="signup-name">Full Name:</label>
+          <input id="signup-name" name="name" type="text" autocomplete="name">
 
-  </section>
-</main>
+          <label for="signup-email">Email:</label>
+          <input id="signup-email" name="email" type="email" autocomplete="email">
 
-<footer>
-  <p>Web Dev Group Project</p>
-</footer>
+          <label for="signup-password">Password:</label>
+          <input id="signup-password" name="password" type="password" autocomplete="new-password">
 
-</body>
+          <label for="signup-country">Country:</label>
+          <input id="signup-country" name="country" type="text" autocomplete="country">
+
+          <input class="signup-submit" type="submit" value="Sign Up">
+
+        </form>
+
+        <div class="signup-box">
+          <p>Already have an account?</p>
+          <a class="signup-btn" href="login.html">Login</a>
+        </div>
+
+      </div>
+
+    </main>
+  </body>
 </html>
