@@ -1,163 +1,232 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Feedback</title>
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/header-menu.css" />
     <link rel="stylesheet" href="css/feedback.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    />
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <header>
-        <div class="hamburger-menu">
+      <div class="hamburger-menu">
         <input type="checkbox" id="menu-toggle" />
         <label
-            for="menu-toggle"
-            class="hamburger-icon"
-            aria-label="Toggle menu"
+          for="menu-toggle"
+          class="hamburger-icon"
+          aria-label="Toggle menu"
         >
-            <span></span>
-            <span></span>
-            <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </label>
         <nav class="nav-panel">
-            <ul class="nav-list">
+          <ul class="nav-list">
             <li><a href="progress.html">Progress</a></li>
             <li><a href="feedback.html">Feedback</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="settings.html">Settings</a></li>
-            </ul>
+          </ul>
         </nav>
-        </div>
-        <div class="header-title"><h1>Habit Tracker</h1></div>
+      </div>
+      <div class="header-title"><h1>Habit Tracker</h1></div>
     </header>
 
     <main>
-        <div class="new-habit-title">Feedback:</div>
+      <div class="new-habit-title">Feedback:</div>
 
-        <form  action="mailto:example@email.com" method="post" enctype="text/plain">
+      <form
+        action="mailto:example@email.com"
+        method="post"
+        enctype="text/plain"
+      >
+        <div class="feedback-container">
+          <div class="feedback-from">
+            <table>
+              <tr>
+                <td><label for="name">Full name:</label></td>
+                <td><input type="text" id="name" name="name" required /></td>
+              </tr>
 
-            <div class="feedback-container">
+              <tr>
+                <td><label for="email">Email:</label></td>
+                <td><input type="email" id="email" name="email" required /></td>
+              </tr>
+            </table>
+          </div>
 
-                <div class="feedback-from">
-                    <table>
-                        <tr>
-                            <td><label for="name">Full name:</label></td>
-                            <td><input type="text" id="name" name="name" required></td>
-                        </tr>
+          <div class="feedback-rating">
+            <table>
+              <tr>
+                <td><label for="occupation">You are a: </label></td>
+                <td>
+                  <select name="occupation" id="occupation">
+                    <option value="student">student</option>
+                    <option value="professional">professional</option>
+                    <option value="other">other</option>
+                  </select>
+                </td>
+              </tr>
 
-                        <tr>
-                            <td><label for="email">Email:</label></td>
-                            <td><input type="email" id="email" name="email" required></td>
-                        </tr>
-                    </table>
-                </div>
+              <tr>
+                <td><label for="rate-us">Rate us:</label></td>
+                <td>
+                  <div class="rating-container">
+                    <div class="rating">
+                      <input
+                        type="radio"
+                        name="rating"
+                        id="star-1"
+                        class="rating-radio"
+                        value="1"
+                      />
+                      <label for="star-1"
+                        ><i class="fa-solid fa-star"></i
+                      ></label>
 
-                <div class="feedback-rating">
-                    <table>
-                        <tr>
-                            <td><label for="occupation">You are a: </label></td>
-                            <td>
-                                <select name="occupation" id="occupation">
-                                    <option value="student">student</option>
-                                    <option value="professional">professional</option>
-                                    <option value="other">other</option>
-                                </select>
-                            </td>
-                        </tr>
+                      <input
+                        type="radio"
+                        name="rating"
+                        id="star-2"
+                        class="rating-radio"
+                        value="2"
+                      />
+                      <label for="star-2"
+                        ><i class="fa-solid fa-star"></i
+                      ></label>
 
-                        <tr>
-                            <td><label for="rate-us">Rate us:</label></td>
-                            <td>
-                                <div class="rating-container">
-                                    <div class="rating">
-                                        <input type="radio" name="rating" id="star-1" class="rating-radio" value="1">
-                                        <label for="star-1"><i class="fa-solid fa-star"></i></label>
+                      <input
+                        type="radio"
+                        name="rating"
+                        id="star-3"
+                        class="rating-radio"
+                        value="3"
+                      />
+                      <label for="star-3"
+                        ><i class="fa-solid fa-star"></i
+                      ></label>
 
-                                        <input type="radio" name="rating" id="star-2" class="rating-radio" value="2">
-                                        <label for="star-2"><i class="fa-solid fa-star"></i></label>
+                      <input
+                        type="radio"
+                        name="rating"
+                        id="star-4"
+                        class="rating-radio"
+                        value="4"
+                      />
+                      <label for="star-4"
+                        ><i class="fa-solid fa-star"></i
+                      ></label>
 
-                                        <input type="radio" name="rating" id="star-3" class="rating-radio" value="3">
-                                        <label for="star-3"><i class="fa-solid fa-star"></i></label>
+                      <input
+                        type="radio"
+                        name="rating"
+                        id="star-5"
+                        class="rating-radio"
+                        value="5"
+                      />
+                      <label for="star-5"
+                        ><i class="fa-solid fa-star"></i
+                      ></label>
+                    </div>
+                  </div>
+                </td>
+              </tr>
 
-                                        <input type="radio" name="rating" id="star-4" class="rating-radio" value="4">
-                                        <label for="star-4"><i class="fa-solid fa-star"></i></label>
+              <tr>
+                <td><label for="liked-checklist">What did you like:</label></td>
+                <td>
+                  <div class="liked-checklist">
+                    <label
+                      ><input
+                        type="checkbox"
+                        name="liked"
+                        value="interface"
+                      />Interface</label
+                    >
+                    <label
+                      ><input
+                        type="checkbox"
+                        name="liked"
+                        value="features"
+                      />Features</label
+                    >
+                    <label
+                      ><input
+                        type="checkbox"
+                        name="liked"
+                        value="usability"
+                      />Usability</label
+                    >
+                    <label
+                      ><input
+                        type="checkbox"
+                        name="liked"
+                        value="design"
+                      />Design</label
+                    >
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
 
-                                        <input type="radio" name="rating" id="star-5" class="rating-radio" value="5">
-                                        <label for="star-5"><i class="fa-solid fa-star"></i></label>
+          <div class="feedback-comment">
+            <table>
+              <tr>
+                <td>
+                  <label for="how-often"
+                    >How often do you use habit tracker:
+                  </label>
+                </td>
+                <td>
+                  <select name="how-often" id="how-often">
+                    <option value="Daily">Daily</option>
+                    <option value="Weekly">Weekly</option>
+                    <option value="Monthly">Monthly</option>
+                  </select>
+                </td>
+              </tr>
 
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
+              <tr>
+                <td><label for="recommend">Would you recommend us: </label></td>
+                <td>
+                  <select name="recommend" id="recommend">
+                    <option value="yes">yes</option>
+                    <option value="no">no</option>
+                    <option value="unsure">unsure</option>
+                  </select>
+                </td>
+              </tr>
 
-                        <tr>
-                            <td><label for="liked-checklist">What did you like:</label></td>
-                            <td>
-                                <div class="liked-checklist">
-                                    <label><input type="checkbox" name="liked" value="interface">Interface</label>
-                                    <label><input type="checkbox" name="liked" value="features">Features</label>
-                                    <label><input type="checkbox" name="liked" value="usability">Usability</label>
-                                    <label><input type="checkbox" name="liked" value="design">Design</label>
-                                </div>
-                        </tr>
+              <tr>
+                <td><label for="comment">Comments:</label></td>
+                <td>
+                  <textarea
+                    name="comment"
+                    id="comment"
+                    rows="4"
+                    cols="20"
+                  ></textarea>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
 
-                    </table>
-                </div>
-
-                <div class="feedback-comment">
-                    <table>
-                        <tr>
-                            <td><label for="how-often">How often do you use habit tracker: </label></td>
-                            <td>
-                                <select name="how-often" id="how-often">
-                                    <option value="Daily">Daily</option>
-                                    <option value="Weekly">Weekly</option>
-                                    <option value="Monthly">Monthly</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td><label for="recommend">Would you recommend us: </label></td>
-                            <td>
-                                <select name="recommend" id="recommend">
-                                    <option value="yes">yes</option>
-                                    <option value="no">no</option>
-                                    <option value="unsure">unsure</option>
-                                </select>
-                            </td>
-                        </tr>
-
-                        <tr>
-                            <td><label for="comment">Comments:</label></td>
-                            <td><textarea name="comment" id="comment" rows="4" cols="20"></textarea></td>
-                        </tr>
-
-                    </table>
-                </div>
-            </div>
-            
-
-            <div class="form-actions">
-                <input class="btn-clear" type="reset" value="Clear">
-                <input class="btn-submit" type="submit" value="Submit Feedback">
-            </div>
-
-        </form>
-
+        <div class="form-actions">
+          <input class="btn-clear" type="reset" value="Clear" />
+          <input class="btn-submit" type="submit" value="Submit Feedback" />
+        </div>
+      </form>
     </main>
 
-    <footer>
-
-    </footer>
-</body>
-
+    <footer></footer>
+  </body>
 </html>

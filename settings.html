@@ -1,53 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Settings</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Settings</title>
+  </head>
+  <body>
+    <header>
+      <h1><a href="index.html">Habit Tracker</a></h1>
+      <nav>
+        <a href="index.html">Home</a> | <a href="about.html">About</a> |
+        <a href="contact.html">Contact</a> | <a href="signup.html">Sign Up</a> |
+        <a href="login.html">Log In</a> |
+        <a href="settings.html">Settings</a>
+      </nav>
+    </header>
 
-<header>
-  <h1><a href="index.html">Habit Tracker</a></h1>
-  <nav>
-    <a href="index.html">Home</a> |
-    <a href="about.html">About</a> |
-    <a href="contact.html">Contact</a> |
-    <a href="signup.html">Sign Up</a> |
-    <a href="login.html">Log In</a> |
-    <a href="settings.html">Settings</a>
-  </nav>
-</header>
+    <main>
+      <section>
+        <h2>User Settings</h2>
 
-<main>
-  <section>
-    <h2>User Settings</h2>
+        <form action="#" method="post">
+          <label for="display-name">Display Name:</label><br />
+          <input
+            type="text"
+            id="display-name"
+            name="display-name"
+          /><br /><br />
 
-    <form action="#" method="post">
-      <label for="display-name">Display Name:</label><br>
-      <input type="text" id="display-name" name="display-name"><br><br>
+          <label for="settings-email">Email:</label><br />
+          <input
+            type="email"
+            id="settings-email"
+            name="settings-email"
+          /><br /><br />
 
-      <label for="settings-email">Email:</label><br>
-      <input type="email" id="settings-email" name="settings-email"><br><br>
+          <p>Theme:</p>
+          <input type="radio" id="dark" name="theme" value="dark" />
+          <label for="dark">Dark</label><br />
 
-      <p>Theme:</p>
-      <input type="radio" id="dark" name="theme" value="dark">
-      <label for="dark">Dark</label><br>
+          <input type="radio" id="light" name="theme" value="light" />
+          <label for="light">Light</label><br /><br />
 
-      <input type="radio" id="light" name="theme" value="light">
-      <label for="light">Light</label><br><br>
+          <p>Notifications:</p>
+          <input type="checkbox" id="email-updates" name="email-updates" />
+          <label for="email-updates">Email updates</label><br />
 
-      <p>Notifications:</p>
-      <input type="checkbox" id="email-updates" name="email-updates">
-      <label for="email-updates">Email updates</label><br>
+          <input type="checkbox" id="sms-updates" name="sms-updates" />
+          <label for="sms-updates">SMS updates</label><br /><br />
 
-      <input type="checkbox" id="sms-updates" name="sms-updates">
-      <label for="sms-updates">SMS updates</label><br><br>
-
-      <input type="submit" value="Save Settings">
-    </form>
-
-  </section>
-</main>
+          <input type="submit" value="Save Settings" />
+        </form>
+      </section>
+    </main>
 
     <footer>
       <hr />
@@ -61,6 +65,5 @@
         <a href="contact.html">Contact us</a>
       </nav>
     </footer>
-
-</body>
+  </body>
 </html>
