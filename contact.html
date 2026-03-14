@@ -4,27 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Contact Us</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/contact.css" />
   </head>
 
   <body>
     <header>
-      <h1><a href="index.html">Habit Tracker</a></h1>
-      <p>
-        Track your habits and stay motivated! (Phase 1: content only) |
-        <a href="signup.html">Login / Sign Up</a> |
-        <a href="settings.html">Settings</a>
-      </p>
-      <hr />
-
-      <nav>
-        <a href="index.html">Home</a> | <a href="new-habit.html">New Habit</a> |
-        <a href="progress.html">Progress</a> |
-        <a href="feedback.html">Rate Us</a> | <a href="about.html">About</a> |
-        <a href="contact.html">Contact Us</a> |
-      </nav>
-
-      <hr />
-      <hr />
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-toggle" />
+        <label
+          for="menu-toggle"
+          class="hamburger-icon"
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="nav-panel">
+          <ul class="nav-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="progress.html">Progress</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-title"><h1>Habit Tracker</h1></div>
     </header>
 
     <main>
@@ -93,8 +101,6 @@
     </main>
 
     <footer>
-      <hr />
-      <hr />
       <p>Habit Tracker - Web Centric Progaming Group Project - Phase 1</p>
 
       <p>&copy; 2026 Habit Tracker. All rights reserved.</p>

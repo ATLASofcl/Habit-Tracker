@@ -1,186 +1,193 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Progress</title>
-</head>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-<body>
+  <body>
     <header>
       <h1><a href="index.html">Habit Tracker</a></h1>
-      <p>Track your habits and stay motivated! (Phase 1: content only) |
-      <a href="signup.html">Login / Sign Up</a> |
-      <a href="settings.html">Settings</a>
+      <p>
+        Track your habits and stay motivated! (Phase 1: content only) |
+        <a href="signup.html">Login / Sign Up</a> |
+        <a href="settings.html">Settings</a>
       </p>
       <hr />
 
-        <nav>
-            <a href="index.html">Home</a> | 
-            <a href="new-habit.html">New Habit</a> |
-            <a href="progress.html">Progress</a> | 
-            <a href="feedback.html">Rate Us</a> | 
-            <a href="about.html">About</a> | 
-            <a href="contact.html">Contact Us</a> | 
-        </nav>
+      <nav>
+        <a href="index.html">Home</a> | <a href="new-habit.html">New Habit</a> |
+        <a href="progress.html">Progress</a> |
+        <a href="feedback.html">Rate Us</a> | <a href="about.html">About</a> |
+        <a href="contact.html">Contact Us</a> |
+      </nav>
 
-      <hr/><hr>
-  </header>
+      <hr />
+      <hr />
+    </header>
 
     <main>
-        <h2>Your Progress</h2>
-        <p>Track your statistics and see how you are doing over time.</p>
-        <hr>
+      <h2>Your Progress</h2>
+      <p>Track your statistics and see how you are doing over time.</p>
+      <hr />
 
-        <section>
-            <h3>This Week at a Glance</h3>
-            <p><strong>Habits completed today:</strong> 2 / 3</p>
-            <p><strong>Week so far:</strong> 12 completions across all habits</p>
-            <p><strong>Best day this week:</strong> Tuesday (3/3 habits)</p>
-            <hr>
-        </section>
+      <section>
+        <h3>This Week at a Glance</h3>
+        <p><strong>Habits completed today:</strong> 2 / 3</p>
+        <p><strong>Week so far:</strong> 12 completions across all habits</p>
+        <p><strong>Best day this week:</strong> Tuesday (3/3 habits)</p>
+        <hr />
+      </section>
 
-        <section>
-            <h3>Weekly Progress</h3>
-            <table>
-                <caption>Completion by habit (current week)</caption>
-                <thead>
-                    <tr>
-                        <th>Habit</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                        <th>Sun</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Drink Water</td>
-                        <td>✔️</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                        <td>✔️</td>
-                        <td>✔️</td>
-                    </tr>
-                    <tr>
-                        <td>Work Out</td>
-                        <td>❌</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                        <td>❌</td>
-                        <td>✔️</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                    </tr>
-                    <tr>
-                        <td>Reading</td>
-                        <td>✔️</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                        <td>✔️</td>
-                        <td>✔️</td>
-                        <td>❌</td>
-                        <td>✔️</td>
-                    </tr>
-                </tbody>
-            </table>
-            <hr>
-        </section>
+      <section>
+        <h3>Weekly Progress</h3>
+        <table>
+          <caption>
+            Completion by habit (current week)
+          </caption>
+          <thead>
+            <tr>
+              <th>Habit</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+              <th>Sun</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Drink Water</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>❌</td>
+              <td>✔️</td>
+              <td>❌</td>
+              <td>✔️</td>
+              <td>✔️</td>
+            </tr>
+            <tr>
+              <td>Work Out</td>
+              <td>❌</td>
+              <td>✔️</td>
+              <td>❌</td>
+              <td>❌</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>❌</td>
+            </tr>
+            <tr>
+              <td>Reading</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>❌</td>
+              <td>✔️</td>
+              <td>✔️</td>
+              <td>❌</td>
+              <td>✔️</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
 
-        <section>
-            <h3>Habit Streaks</h3>
-            <p>Current streaks show how many days in a row you have completed each habit.</p>
-            <table>
-                <caption>Current streaks</caption>
-                <thead>
-                    <tr>
-                        <th>Habit</th>
-                        <th>Current Streak</th>
-                        <th>Longest Streak</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Drink Water</td>
-                        <td>0 days</td>
-                        <td>14 days</td>
-                    </tr>
-                    <tr>
-                        <td>Work Out</td>
-                        <td>0 days</td>
-                        <td>7 days</td>
-                    </tr>
-                    <tr>
-                        <td>Reading</td>
-                        <td>0 days</td>
-                        <td>21 days</td>
-                    </tr>
-                </tbody>
-            </table>
-            <hr>
-        </section>
+      <section>
+        <h3>Habit Streaks</h3>
+        <p>
+          Current streaks show how many days in a row you have completed each
+          habit.
+        </p>
+        <table>
+          <caption>
+            Current streaks
+          </caption>
+          <thead>
+            <tr>
+              <th>Habit</th>
+              <th>Current Streak</th>
+              <th>Longest Streak</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Drink Water</td>
+              <td>0 days</td>
+              <td>14 days</td>
+            </tr>
+            <tr>
+              <td>Work Out</td>
+              <td>0 days</td>
+              <td>7 days</td>
+            </tr>
+            <tr>
+              <td>Reading</td>
+              <td>0 days</td>
+              <td>21 days</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
 
-        <section>
-            <h3>Completion Rates</h3>
-            <p>Percentage of days you completed each habit (last 30 days).</p>
-            <table>
-                <caption>Last 30 days</caption>
-                <thead>
-                    <tr>
-                        <th>Habit</th>
-                        <th>Completed</th>
-                        <th>Rate</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Drink Water</td>
-                        <td>22 / 30 days</td>
-                        <td>73%</td>
-                    </tr>
-                    <tr>
-                        <td>Work Out</td>
-                        <td>15 / 30 days</td>
-                        <td>50%</td>
-                    </tr>
-                    <tr>
-                        <td>Reading</td>
-                        <td>18 / 30 days</td>
-                        <td>60%</td>
-                    </tr>
-                </tbody>
-            </table>
-            <hr>
-        </section>
+      <section>
+        <h3>Completion Rates</h3>
+        <p>Percentage of days you completed each habit (last 30 days).</p>
+        <table>
+          <caption>
+            Last 30 days
+          </caption>
+          <thead>
+            <tr>
+              <th>Habit</th>
+              <th>Completed</th>
+              <th>Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Drink Water</td>
+              <td>22 / 30 days</td>
+              <td>73%</td>
+            </tr>
+            <tr>
+              <td>Work Out</td>
+              <td>15 / 30 days</td>
+              <td>50%</td>
+            </tr>
+            <tr>
+              <td>Reading</td>
+              <td>18 / 30 days</td>
+              <td>60%</td>
+            </tr>
+          </tbody>
+        </table>
+        <hr />
+      </section>
 
-        <section>
-            <h3>Monthly Overview</h3>
-            <p><strong>January 2026</strong></p>
-            <p>Total habit completions: 67</p>
-            <p>Average per day: 2.4 habits</p>
-            <p>Most consistent habit: Reading (completed on 20 days)</p>
-        </section>
+      <section>
+        <h3>Monthly Overview</h3>
+        <p><strong>January 2026</strong></p>
+        <p>Total habit completions: 67</p>
+        <p>Average per day: 2.4 habits</p>
+        <p>Most consistent habit: Reading (completed on 20 days)</p>
+      </section>
     </main>
 
     <footer>
-      <hr><hr>
-      <p>
-          Habit Tracker - Web Centric Progaming Group Project - Phase 1
-      </p>
+      <hr />
+      <hr />
+      <p>Habit Tracker - Web Centric Progaming Group Project - Phase 1</p>
 
       <p>&copy; 2026 Habit Tracker. All rights reserved.</p>
 
       <nav>
-          <a href="about.html">About</a> | 
-          <a href="contact.html">Contact us</a>
+        <a href="about.html">About</a> |
+        <a href="contact.html">Contact us</a>
       </nav>
     </footer>
-</body>
-
+  </body>
 </html>
