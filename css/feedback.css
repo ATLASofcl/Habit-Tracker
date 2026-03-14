@@ -1,5 +1,9 @@
 * {
     box-sizing: border-box;
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
 }
 
 main {
@@ -7,6 +11,11 @@ main {
   padding-bottom: 10vh;
   margin: 0 auto;
   gap: 10px;
+}
+
+.new-habit-title {
+    color: white;
+    font-size: 1.15rem;
 }
 
 .feedback-container{
@@ -32,10 +41,9 @@ main {
 
 .feedback-container select {
     width: fit-content;
-    
 }
 
-input, select, textarea {
+input, select {
     background-color: #313130;
     color: white;
     border: 1px solid gray;
@@ -44,12 +52,21 @@ input, select, textarea {
     padding: 5px;
 }
 
+textarea {
+    background-color: #313130;
+    color: white;
+    border: 1px solid gray;
+    width: 100%;
+    border-radius: 20px;
+    padding: 5px;
+    resize: vertical;
+}
+
 tr, td{
     width: fit-content;
 }
 
 .form-actions{
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -58,13 +75,15 @@ tr, td{
     max-width: 500px;
     background-color: #313130;
     padding: 10px 15px;
-    position: fixed;
+    position: fixed !important;
     bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
+    right: 0;
+    margin: 0 auto;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+    z-index: 999;
 }
 
 .btn-clear, .btn-submit{
