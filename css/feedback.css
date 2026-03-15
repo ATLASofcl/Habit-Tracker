@@ -1,9 +1,5 @@
 * {
     box-sizing: border-box;
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
 }
 
 main {
@@ -133,4 +129,11 @@ tr, td{
 .rating-container .rating input[type="radio"]:checked + label i,
 .rating-container .rating input[type="radio"]:checked ~ label i{
     color: #FFCA3A;
+}
+
+.feedback-container > div,
+.new-habit-title,
+.form-actions {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
 }
