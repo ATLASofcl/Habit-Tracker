@@ -1,9 +1,5 @@
 * {
     box-sizing: border-box;
-    animation: none !important;
-    transition: none !important;
-    transform: none !important;
-    opacity: 1 !important;
 }
 
 .new-habit-title {
@@ -131,4 +127,13 @@ tr td:first-child{
     background-color: white;
     color: black;
     border: none;
+}
+
+.new-habit-title,
+.habit-info,
+.habit-goals,
+.habit-reminder,
+.form-actions {
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards;
 }
