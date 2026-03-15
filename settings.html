@@ -3,67 +3,79 @@
   <head>
     <meta charset="UTF-8" />
     <title>Settings</title>
+
+    <link rel="stylesheet" href="css/header-menu.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/settings.css">
   </head>
   <body>
     <header>
-      <h1><a href="index.html">Habit Tracker</a></h1>
-      <nav>
-        <a href="index.html">Home</a> | <a href="about.html">About</a> |
-        <a href="contact.html">Contact</a> | <a href="signup.html">Sign Up</a> |
-        <a href="login.html">Log In</a> |
-        <a href="settings.html">Settings</a>
-      </nav>
+      <div class="hamburger-menu">
+        <input type="checkbox" id="menu-toggle" />
+        <label
+          for="menu-toggle"
+          class="hamburger-icon"
+          aria-label="Toggle menu"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <nav class="nav-panel">
+          <ul class="nav-list">
+            <li><a href="progress.html">Progress</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="settings.html">Settings</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="header-title"><h1>Habit Tracker</h1></div>
     </header>
-
     <main>
-      <section>
-        <h2>User Settings</h2>
+      <h2>User Settings</h2>
+      <form class="settings-container" action="#" method="post">
 
-        <form action="#" method="post">
+        
+        <div class="name-settings">
           <label for="display-name">Display Name:</label><br />
           <input
             type="text"
             id="display-name"
             name="display-name"
-          /><br /><br />
+          /> <br>
 
           <label for="settings-email">Email:</label><br />
           <input
             type="email"
             id="settings-email"
             name="settings-email"
-          /><br /><br />
+          />
+        </div>
 
-          <p>Theme:</p>
+
+        <div class="theme-settings">
+          <p>Theme:</p> <br>
           <input type="radio" id="dark" name="theme" value="dark" />
           <label for="dark">Dark</label><br />
 
           <input type="radio" id="light" name="theme" value="light" />
           <label for="light">Light</label><br /><br />
+        </div>
 
-          <p>Notifications:</p>
+        <div class="notification-settings">
+          <p>Notifications:</p> <br>
           <input type="checkbox" id="email-updates" name="email-updates" />
           <label for="email-updates">Email updates</label><br />
 
           <input type="checkbox" id="sms-updates" name="sms-updates" />
           <label for="sms-updates">SMS updates</label><br /><br />
+        </div>
 
+        <div class="save-btn-container">
           <input type="submit" value="Save Settings" />
-        </form>
-      </section>
+        </div>
+      </form>
     </main>
-
-    <footer>
-      <hr />
-      <hr />
-      <p>Habit Tracker - Web Centric Progaming Group Project - Phase 1</p>
-
-      <p>&copy; 2026 Habit Tracker. All rights reserved.</p>
-
-      <nav>
-        <a href="about.html">About</a> |
-        <a href="contact.html">Contact us</a>
-      </nav>
-    </footer>
   </body>
 </html>
