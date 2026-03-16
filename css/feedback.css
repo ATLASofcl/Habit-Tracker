@@ -79,7 +79,6 @@ tr, td{
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
-    z-index: 999;
 }
 
 .btn-clear, .btn-submit{
