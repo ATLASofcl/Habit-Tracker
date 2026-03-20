@@ -9,6 +9,7 @@ main {
 }
 
 .habit {
+  position: relative;
   display: grid;
   grid-template-areas:
     "image name checkbox"
@@ -46,6 +47,27 @@ main {
   align-self: center;
   cursor: pointer;
   margin-left: auto;
+}
+
+.habit-checkbox.checked {
+  background-color: var(--habit-color);
+}
+
+.delete-habit-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: none;
+  border: none;
+  color: #888;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.delete-habit-btn:hover {
+  color: #ff595e;
 }
 
 .habit-table {
