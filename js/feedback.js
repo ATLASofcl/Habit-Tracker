@@ -22,7 +22,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var rating = ratingRadio ? parseInt(ratingRadio.value) : 0;
 
     // "What did you like" checkboxes — collect all checked values
-    var likedCheckboxes = document.querySelectorAll('input[name="liked"]:checked');
+    var likedCheckboxes = document.querySelectorAll(
+      'input[name="liked"]:checked',
+    );
     var liked = [];
     likedCheckboxes.forEach(function (cb) {
       liked.push(cb.value);

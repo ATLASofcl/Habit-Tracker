@@ -26,7 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
     // Find matching user
     var users = getFromStorage(KEYS.users) || [];
     var user = users.find(function (u) {
-      return u.email.toLowerCase() === email.toLowerCase() && u.password === password;
+      return (
+        u.email.toLowerCase() === email.toLowerCase() && u.password === password
+      );
     });
 
     if (!user) {

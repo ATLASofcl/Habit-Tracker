@@ -87,7 +87,9 @@ function updateBarChart(habitId) {
 // --- Habit card on progress page ---
 function updateHabitCard(habitId) {
   var habits = getFromStorage(KEYS.habits) || [];
-  var habit = habits.find(function (h) { return h.id === habitId; });
+  var habit = habits.find(function (h) {
+    return h.id === habitId;
+  });
   if (!habit) return;
 
   var card = document.querySelector(".habit");
@@ -116,8 +118,10 @@ function updateHabitCard(habitId) {
     var today = new Date();
     var monthCompletions = getCompletionsForHabit(habitId).filter(function (c) {
       var parts = c.date.split("-");
-      return parseInt(parts[0]) === today.getFullYear() &&
-             parseInt(parts[1]) === today.getMonth() + 1;
+      return (
+        parseInt(parts[0]) === today.getFullYear() &&
+        parseInt(parts[1]) === today.getMonth() + 1
+      );
     });
     counterEl.textContent = monthCompletions.length + " this month";
   }
@@ -143,7 +147,11 @@ function updateHabitCard(habitId) {
 // --- Stats: streaks and completion percentage ---
 function updateStats(habitId) {
   var completions = getCompletionsForHabit(habitId);
-  var dates = completions.map(function (c) { return c.date; }).sort();
+  var dates = completions
+    .map(function (c) {
+      return c.date;
+    })
+    .sort();
 
   // Current streak: consecutive days ending today (or most recent)
   var currentStreak = calculateCurrentStreak(dates);
@@ -162,13 +170,21 @@ function updateStats(habitId) {
   var statBoxes = document.querySelectorAll(".stat-box");
   if (statBoxes.length >= 2) {
     statBoxes[0].innerHTML =
-      "<p>Highest Streak: " + highestStreak + " days</p>" +
-      "<p>Current Streak: " + currentStreak + " days</p>";
+      "<p>Highest Streak: " +
+      highestStreak +
+      " days</p>" +
+      "<p>Current Streak: " +
+      currentStreak +
+      " days</p>";
 
     statBoxes[1].innerHTML =
       "<p>Completed</p>" +
-      "<p>(" + today.getFullYear() + ")</p>" +
-      '<p class="stat-highlight">' + yearPercent + " %</p>";
+      "<p>(" +
+      today.getFullYear() +
+      ")</p>" +
+      '<p class="stat-highlight">' +
+      yearPercent +
+      " %</p>";
   }
 }
 
@@ -225,7 +241,9 @@ function calculateHighestStreak(sortedDates) {
 // --- Info pills: start date, average, total ---
 function updateInfoPills(habitId) {
   var habits = getFromStorage(KEYS.habits) || [];
-  var habit = habits.find(function (h) { return h.id === habitId; });
+  var habit = habits.find(function (h) {
+    return h.id === habitId;
+  });
   var completions = getCompletionsForHabit(habitId);
   var pills = document.querySelectorAll(".info-pill");
 
@@ -242,11 +260,14 @@ function updateInfoPills(habitId) {
 
   // Average per month
   var today = new Date();
-  var monthsSinceCreation = (today.getFullYear() - startDate.getFullYear()) * 12 +
-    (today.getMonth() - startDate.getMonth()) + 1;
+  var monthsSinceCreation =
+    (today.getFullYear() - startDate.getFullYear()) * 12 +
+    (today.getMonth() - startDate.getMonth()) +
+    1;
   if (monthsSinceCreation < 1) monthsSinceCreation = 1;
   var avgPerMonth = Math.round(completions.length / monthsSinceCreation);
-  pills[1].textContent = "Average time per month: " + avgPerMonth + " Days / Month";
+  pills[1].textContent =
+    "Average time per month: " + avgPerMonth + " Days / Month";
 
   // Total check-ins
   pills[2].textContent = "Total Check-ins: " + completions.length;

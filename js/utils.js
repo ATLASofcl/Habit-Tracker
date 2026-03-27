@@ -40,7 +40,11 @@ function getCurrentUser() {
   if (!userId) return null;
 
   var users = getFromStorage(KEYS.users) || [];
-  return users.find(function (u) { return u.id === userId; }) || null;
+  return (
+    users.find(function (u) {
+      return u.id === userId;
+    }) || null
+  );
 }
 
 // Redirect to login page if not logged in
@@ -55,13 +59,17 @@ function requireAuth() {
 // Get all habits belonging to a user
 function getUserHabits(userId) {
   var habits = getFromStorage(KEYS.habits) || [];
-  return habits.filter(function (h) { return h.userId === userId; });
+  return habits.filter(function (h) {
+    return h.userId === userId;
+  });
 }
 
 // Get all completion records for a specific habit
 function getCompletionsForHabit(habitId) {
   var completions = getFromStorage(KEYS.completions) || [];
-  return completions.filter(function (c) { return c.habitId === habitId; });
+  return completions.filter(function (c) {
+    return c.habitId === habitId;
+  });
 }
 
 // Check if a habit was completed on a specific date
@@ -115,13 +123,15 @@ function toDateString(dateObj) {
 // Get settings for a user, with sensible defaults
 function getUserSettings(userId) {
   var allSettings = getFromStorage(KEYS.settings) || {};
-  return allSettings[userId] || {
-    displayName: "",
-    email: "",
-    theme: "dark",
-    emailNotifications: false,
-    smsNotifications: false,
-  };
+  return (
+    allSettings[userId] || {
+      displayName: "",
+      email: "",
+      theme: "dark",
+      emailNotifications: false,
+      smsNotifications: false,
+    }
+  );
 }
 
 // Save settings for a user

@@ -19,7 +19,9 @@ document.addEventListener("DOMContentLoaded", function () {
     var category = document.getElementById("habit-category").value;
 
     // Color — the radio values don't have "#", so we prepend it
-    var colorRadio = document.querySelector('input[name="habit-color"]:checked');
+    var colorRadio = document.querySelector(
+      'input[name="habit-color"]:checked',
+    );
     var color = colorRadio ? "#" + colorRadio.value : "#FF595E";
 
     var goalFrequency = parseInt(document.getElementById("goal").value) || 1;

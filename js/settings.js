@@ -33,8 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
 function loadSettings(user) {
   var settings = getUserSettings(user.id);
 
-  document.getElementById("display-name").value = settings.displayName || user.name;
-  document.getElementById("settings-email").value = settings.email || user.email;
+  document.getElementById("display-name").value =
+    settings.displayName || user.name;
+  document.getElementById("settings-email").value =
+    settings.email || user.email;
 
   // Theme radio
   var themeValue = settings.theme || "dark";
@@ -42,8 +44,10 @@ function loadSettings(user) {
   if (themeRadio) themeRadio.checked = true;
 
   // Notification checkboxes
-  document.getElementById("email-updates").checked = settings.emailNotifications || false;
-  document.getElementById("sms-updates").checked = settings.smsNotifications || false;
+  document.getElementById("email-updates").checked =
+    settings.emailNotifications || false;
+  document.getElementById("sms-updates").checked =
+    settings.smsNotifications || false;
 }
 
 // Read form and save to localStorage
@@ -62,7 +66,9 @@ function handleSaveSettings(user) {
   applyTheme(); // apply theme change immediately
 
   // Show confirmation
-  var saveBtn = document.querySelector('.settings-container input[type="submit"]');
+  var saveBtn = document.querySelector(
+    '.settings-container input[type="submit"]',
+  );
   var originalValue = saveBtn.value;
   saveBtn.value = "Saved!";
   setTimeout(function () {

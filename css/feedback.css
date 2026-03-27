@@ -1,5 +1,5 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 main {
@@ -10,124 +10,128 @@ main {
 }
 
 .new-habit-title {
-    color: white;
-    font-size: 1.15rem;
+  color: white;
+  font-size: 1.15rem;
 }
 
-.feedback-container{
-    justify-content: center;
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 auto;
-    gap: 10px;
-    padding-top: 10px;
+.feedback-container {
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  gap: 10px;
+  padding-top: 10px;
 }
 
-.feedback-from, .feedback-rating, .feedback-comment{
-    width: 300px;
-    background-color: #313130;
-    padding: 10px;
-    border-radius: 20px;
-    color: white;
+.feedback-from,
+.feedback-rating,
+.feedback-comment {
+  width: 300px;
+  background-color: #313130;
+  padding: 10px;
+  border-radius: 20px;
+  color: white;
 }
 
-.feedback-container  table{
-    border-spacing: 15px;
+.feedback-container table {
+  border-spacing: 15px;
 }
 
 .feedback-container select {
-    width: fit-content;
+  width: fit-content;
 }
 
-input, select {
-    background-color: #313130;
-    color: white;
-    border: 1px solid gray;
-    max-width: 160px;
-    border-radius: 20px;
-    padding: 5px;
+input,
+select {
+  background-color: #313130;
+  color: white;
+  border: 1px solid gray;
+  max-width: 160px;
+  border-radius: 20px;
+  padding: 5px;
 }
 
 textarea {
-    background-color: #313130;
-    color: white;
-    border: 1px solid gray;
-    width: 100%;
-    border-radius: 20px;
-    padding: 5px;
-    resize: vertical;
+  background-color: #313130;
+  color: white;
+  border: 1px solid gray;
+  width: 100%;
+  border-radius: 20px;
+  padding: 5px;
+  resize: vertical;
 }
 
-tr, td{
-    width: fit-content;
+tr,
+td {
+  width: fit-content;
 }
 
-.form-actions{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(6px, 2vw, 12px);
-    width: 90vw;
-    max-width: 500px;
-    background-color: #313130;
-    padding: 10px 15px;
-    position: fixed !important;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
-    box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
+.form-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(6px, 2vw, 12px);
+  width: 90vw;
+  max-width: 500px;
+  background-color: #313130;
+  padding: 10px 15px;
+  position: fixed !important;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.5);
 }
 
-.btn-clear, .btn-submit{
-    margin: 5px;
-    height: 35px;
-    cursor: pointer;
+.btn-clear,
+.btn-submit {
+  margin: 5px;
+  height: 35px;
+  cursor: pointer;
 }
 
-
-.btn-clear{
-    width: 25%;
-    background-color: #181716;
-    border: none;
+.btn-clear {
+  width: 25%;
+  background-color: #181716;
+  border: none;
 }
 
-.btn-submit{
-    width: 75%;
-    background-color: white;
-    color: black;
-    border: none;
+.btn-submit {
+  width: 75%;
+  background-color: white;
+  color: black;
+  border: none;
 }
 
-.rating-container .rating{
-    direction: rtl;
+.rating-container .rating {
+  direction: rtl;
 }
 
-.rating-container .rating label{
-    display: inline-block;
-    cursor: pointer;
-    color: #ebebeb;
+.rating-container .rating label {
+  display: inline-block;
+  cursor: pointer;
+  color: #ebebeb;
 }
 
-.rating-container .rating label i{
-    font-size: 1.25rem;
-    transition: 0.1s ease-in;
+.rating-container .rating label i {
+  font-size: 1.25rem;
+  transition: 0.1s ease-in;
 }
 
 .rating-container .rating label:hover i,
-.rating-container .rating label:hover ~ label i{
-    color: #FFCA3A;   
+.rating-container .rating label:hover ~ label i {
+  color: #ffca3a;
 }
 
-.rating-container .rating-radio{
-    display: none;
+.rating-container .rating-radio {
+  display: none;
 }
 
 .rating-container .rating input[type="radio"]:checked + label i,
-.rating-container .rating input[type="radio"]:checked ~ label i{
-    color: #FFCA3A;
+.rating-container .rating input[type="radio"]:checked ~ label i {
+  color: #ffca3a;
 }
 
 .feedback-container > div,
