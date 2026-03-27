@@ -3,6 +3,8 @@
 // ============================================
 
 document.addEventListener("DOMContentLoaded", function () {
+  applyTheme();
+
   // If already logged in, go to dashboard
   if (getCurrentUser()) {
     window.location.href = "index.html";
@@ -12,14 +14,38 @@ document.addEventListener("DOMContentLoaded", function () {
   var form = document.querySelector(".login-box");
   var errorMsg = document.getElementById("login-error");
 
+  var emailInput = document.getElementById("login-email");
+  var passwordInput = document.getElementById("login-password");
+  var requiredFields = [emailInput, passwordInput];
+
+  // Clear red highlight on keypress
+  requiredFields.forEach(function (field) {
+    field.addEventListener("keydown", function () {
+      this.classList.remove("input-error");
+    });
+  });
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    var email = document.getElementById("login-email").value.trim();
-    var password = document.getElementById("login-password").value;
+    var email = emailInput.value.trim();
+    var password = passwordInput.value;
 
-    if (!email || !password) {
-      showError("Please fill in all fields.");
+    // Highlight empty required fields
+    var hasError = false;
+    requiredFields.forEach(function (field) {
+      field.classList.remove("input-error");
+    });
+
+    if (!email) {
+      emailInput.classList.add("input-error");
+      hasError = true;
+    }
+    if (!password) {
+      passwordInput.classList.add("input-error");
+      hasError = true;
+    }
+    if (hasError) {
       return;
     }
 

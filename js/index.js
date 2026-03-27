@@ -101,16 +101,21 @@ function createHabitCard(habit) {
   var todayStr = toDateString(currentDate);
   if (isCompletedOnDate(habit.id, todayStr)) {
     checkbox.classList.add("checked");
-    checkbox.textContent = "\u2713"; // checkmark
-    checkbox.style.display = "flex";
-    checkbox.style.alignItems = "center";
-    checkbox.style.justifyContent = "center";
-    checkbox.style.fontSize = "1.5em";
-    checkbox.style.color = "white";
   }
   checkbox.addEventListener("click", function () {
     toggleCompletion(habit.id, todayStr);
     renderDashboard(); // re-render to update dots + checkbox
+    checkAllHabitsComplete();
+  });
+  checkbox.addEventListener("mouseenter", function () {
+    if (!checkbox.classList.contains("checked")) {
+      checkbox.style.backgroundColor = habit.color + "66";
+    }
+  });
+  checkbox.addEventListener("mouseleave", function () {
+    if (!checkbox.classList.contains("checked")) {
+      checkbox.style.backgroundColor = "";
+    }
   });
   card.appendChild(checkbox);
 
@@ -286,4 +291,60 @@ function handleNextDay() {
     currentDate = next;
     renderDashboard();
   }
+}
+
+// --- Confetti celebration when all habits are complete ---
+function checkAllHabitsComplete() {
+  var user = getCurrentUser();
+  var habits = getUserHabits(user.id);
+  if (habits.length === 0) return;
+
+  var todayStr = toDateString(currentDate);
+  var allDone = habits.every(function (habit) {
+    return isCompletedOnDate(habit.id, todayStr);
+  });
+
+  if (allDone) {
+    launchConfetti();
+  }
+}
+
+function launchConfetti() {
+  // Prevent overlapping confetti bursts
+  if (document.querySelector(".confetti-container")) return;
+
+  var container = document.createElement("div");
+  container.className = "confetti-container";
+  document.body.appendChild(container);
+
+  var colors = [
+    "#ff595e",
+    "#ffca3a",
+    "#8ac926",
+    "#1982c4",
+    "#6a4c93",
+    "#ff924c",
+    "#ffffff",
+  ];
+
+  for (var i = 0; i < 80; i++) {
+    var piece = document.createElement("div");
+    piece.className = "confetti-piece";
+    piece.style.left = Math.random() * 100 + "vw";
+    piece.style.backgroundColor =
+      colors[Math.floor(Math.random() * colors.length)];
+    piece.style.animationDuration = 1 + Math.random() * 1.5 + "s";
+    piece.style.animationDelay = Math.random() * 0.4 + "s";
+    piece.style.width = 6 + Math.random() * 6 + "px";
+    piece.style.height = 6 + Math.random() * 6 + "px";
+    if (Math.random() > 0.5) {
+      piece.style.borderRadius = "50%";
+    }
+    container.appendChild(piece);
+  }
+
+  // Remove after the animation finishes
+  setTimeout(function () {
+    container.remove();
+  }, 3000);
 }

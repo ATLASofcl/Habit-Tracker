@@ -9,12 +9,32 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var form = document.getElementById("feedback-form");
 
+  var nameInput = document.getElementById("name");
+  var emailInput = document.getElementById("email");
+  var ratingContainer = document.querySelector(".rating-container");
+  var ratingRadios = document.querySelectorAll('input[name="rating"]');
+
+  // Clear red highlight on keydown for keyboard-typed fields
+  nameInput.addEventListener("keydown", function () {
+    this.classList.remove("input-error");
+  });
+  emailInput.addEventListener("keydown", function () {
+    this.classList.remove("input-error");
+  });
+
+  // Clear rating error when a star is clicked
+  ratingRadios.forEach(function (radio) {
+    radio.addEventListener("change", function () {
+      ratingContainer.classList.remove("rating-error");
+    });
+  });
+
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
     // Read form values
-    var name = document.getElementById("name").value.trim();
-    var email = document.getElementById("email").value.trim();
+    var name = nameInput.value.trim();
+    var email = emailInput.value.trim();
     var occupation = document.getElementById("occupation").value;
 
     // Star rating (1-5)
@@ -34,13 +54,33 @@ document.addEventListener("DOMContentLoaded", function () {
     var recommend = document.getElementById("recommend").value;
     var comment = document.getElementById("comment").value.trim();
 
-    // Validate required fields
-    if (!name || !email) {
-      alert("Please fill in your name and email.");
-      return;
+    // Validate required fields and highlight invalid ones
+    var hasError = false;
+
+    nameInput.classList.remove("input-error");
+    emailInput.classList.remove("input-error");
+    ratingContainer.classList.remove("rating-error");
+
+    if (!name) {
+      nameInput.classList.add("input-error");
+      hasError = true;
+    }
+    if (!email) {
+      emailInput.classList.add("input-error");
+      hasError = true;
     }
     if (!rating) {
-      alert("Please select a star rating.");
+      ratingContainer.classList.add("rating-error");
+      hasError = true;
+    }
+    if (hasError) {
+      return;
+    }
+
+    // Validate email format
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      emailInput.classList.add("input-error");
       return;
     }
 

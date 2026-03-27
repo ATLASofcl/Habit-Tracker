@@ -21,7 +21,11 @@ main > *:not(form) {
   }
 }
 
-/* Light theme overrides (toggled via Settings page) */
+/* =============================================
+   Light theme overrides (toggled via Settings)
+   ============================================= */
+
+/* --- Global --- */
 body.light-theme {
   background-color: #f5f5f5;
   color: #181716;
@@ -31,14 +35,28 @@ body.light-theme header {
   background-color: #e0e0e0;
 }
 
+body.light-theme .header-title h1 {
+  color: #181716;
+}
+
+body.light-theme .hamburger-icon span {
+  background-color: #181716;
+}
+
 body.light-theme .nav-panel {
   background-color: #e0e0e0;
+  box-shadow: 5px 0 10px rgba(0, 0, 0, 0.15);
 }
 
 body.light-theme .nav-list li a {
   color: #181716;
 }
 
+body.light-theme #no-habits-msg {
+  color: #181716;
+}
+
+/* --- Cards / boxes shared across pages --- */
 body.light-theme .habit,
 body.light-theme .stat-box,
 body.light-theme .feedback-from,
@@ -49,13 +67,24 @@ body.light-theme .habit-goals,
 body.light-theme .habit-reminder,
 body.light-theme .name-settings,
 body.light-theme .theme-settings,
-body.light-theme .notification-settings {
+body.light-theme .notification-settings,
+body.light-theme .chart-container {
   background-color: #d9d9d9;
   color: #181716;
 }
 
+/* --- Footer (index page) --- */
 body.light-theme footer {
   background-color: #d9d9d9;
+  color: #181716;
+  border-top-color: #ccc;
+}
+
+body.light-theme footer a:link,
+body.light-theme footer a:visited,
+body.light-theme footer a:hover,
+body.light-theme footer a:active {
+  color: #555;
 }
 
 body.light-theme .current-date,
@@ -65,6 +94,7 @@ body.light-theme .increase-btn {
   color: #181716;
 }
 
+/* --- Habit table / dots --- */
 body.light-theme .habit-table {
   background-color: #e8e8e8;
 }
@@ -73,14 +103,28 @@ body.light-theme .habit-dot {
   background-color: #bbb;
 }
 
-body.light-theme input,
-body.light-theme select,
-body.light-theme textarea {
-  background-color: #fff;
-  color: #181716;
-  border-color: #aaa;
+body.light-theme .habit-dot.completed {
+  background-color: var(--habit-color);
 }
 
+body.light-theme .habit-dot.current-day {
+  outline-color: #181716;
+}
+
+/* --- Habit checkbox (index) --- */
+body.light-theme .habit-checkbox {
+  background-color: #bbb;
+}
+
+body.light-theme .habit-checkbox.checked {
+  background-color: var(--habit-color);
+}
+
+body.light-theme .habit-checkbox::before {
+  color: #181716;
+}
+
+/* --- Context menu (index) --- */
 body.light-theme .context-menu {
   background-color: #f0f0f0;
   border-color: #ccc;
@@ -101,4 +145,130 @@ body.light-theme .context-menu-item.delete {
 
 body.light-theme .context-menu-item.delete:hover {
   background-color: rgba(211, 47, 47, 0.1);
+}
+
+/* --- Forms (inputs, selects, textareas) --- */
+body.light-theme input,
+body.light-theme select,
+body.light-theme textarea {
+  background-color: #fff;
+  color: #181716;
+  border-color: #aaa;
+}
+
+/* --- Progress page --- */
+body.light-theme .habit-selector {
+  color: #181716;
+}
+
+body.light-theme .habit-selector select,
+body.light-theme .date-selector select {
+  background-color: #e8e8e8;
+  color: #181716;
+}
+
+body.light-theme .chart-label {
+  color: #181716;
+}
+
+body.light-theme .chart-bar-bg {
+  background: repeating-linear-gradient(
+    to top,
+    #181716 0px,
+    #181716 4px,
+    transparent 4px,
+    transparent 8px
+  );
+}
+
+body.light-theme .habit-counter {
+  background-color: #c0c0c0;
+  color: #181716;
+}
+
+body.light-theme .info-pill {
+  color: #fff;
+}
+
+/* --- New-habit & Feedback pages --- */
+body.light-theme .new-habit-title {
+  color: #181716;
+}
+
+body.light-theme .form-actions {
+  background-color: #d9d9d9;
+}
+
+body.light-theme .btn-clear {
+  background-color: #c0c0c0;
+  color: #181716;
+}
+
+body.light-theme input[type="radio"]:checked + [class*="color-dot"] {
+  border-color: #181716;
+}
+
+body.light-theme .color-picker-container {
+  border-color: #aaa;
+}
+
+/* --- Settings page --- */
+body.light-theme h2 {
+  color: #181716;
+}
+
+body.light-theme .save-btn-container {
+  background-color: #d9d9d9;
+}
+
+/* --- About page --- */
+body.light-theme .about-card {
+  background-color: #d9d9d9;
+  color: #181716;
+}
+
+body.light-theme .hyperlink a:link,
+body.light-theme .hyperlink a:visited {
+  color: #555;
+}
+
+/* --- Contact page --- */
+body.light-theme section {
+  background-color: #d9d9d9;
+  color: #181716;
+}
+
+body.light-theme a:link,
+body.light-theme a:visited,
+body.light-theme a:hover,
+body.light-theme a:active {
+  color: #555;
+}
+
+/* --- Login & Signup pages --- */
+body.light-theme .login-box,
+body.light-theme .signup-box,
+body.light-theme .signup-form {
+  background-color: #d9d9d9;
+  color: #181716;
+}
+
+body.light-theme .login-box input[type="email"],
+body.light-theme .login-box input[type="password"],
+body.light-theme .signup-form input[type="email"],
+body.light-theme .signup-form input[type="password"],
+body.light-theme .signup-form input[type="text"] {
+  background-color: #fff;
+  color: #181716;
+  border-color: #aaa;
+}
+
+body.light-theme .signup-btn {
+  background-color: #d9d9d9;
+  color: #181716;
+}
+
+/* --- Star rating (feedback) --- */
+body.light-theme .rating-container .rating label {
+  color: #aaa;
 }

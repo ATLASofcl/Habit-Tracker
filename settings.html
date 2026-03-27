@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Settings</title>
 
     <link rel="stylesheet" href="css/header-menu.css" />
@@ -37,51 +38,44 @@
       <h2>User Settings</h2>
       <form class="settings-container" action="#" method="post">
         <div class="name-settings">
-          <label for="display-name">Display Name:</label><br />
-          <input type="text" id="display-name" name="display-name" /> <br />
-
-          <label for="settings-email">Email:</label><br />
+          <label for="display-name">Display Name:</label>
+          <input type="text" id="display-name" name="display-name" />
+          <label for="settings-email">Email:</label>
           <input type="email" id="settings-email" name="settings-email" />
         </div>
 
         <div class="theme-settings">
           <p>Theme:</p>
-          <br />
-          <input type="radio" id="dark" name="theme" value="dark" />
-          <label for="dark">Dark</label><br />
-
-          <input type="radio" id="light" name="theme" value="light" />
-          <label for="light">Light</label><br /><br />
+          <div class="radio-option">
+            <input type="radio" id="dark" name="theme" value="dark" />
+            <label for="dark">Dark</label>
+          </div>
+          <div class="radio-option">
+            <input type="radio" id="light" name="theme" value="light" />
+            <label for="light">Light</label>
+          </div>
         </div>
 
         <div class="notification-settings">
           <p>Notifications:</p>
-          <br />
-          <input type="checkbox" id="email-updates" name="email-updates" />
-          <label for="email-updates">Email updates</label><br />
-
-          <input type="checkbox" id="sms-updates" name="sms-updates" />
-          <label for="sms-updates">SMS updates</label><br /><br />
+          <div class="checkbox-option">
+            <input type="checkbox" id="email-updates" name="email-updates" />
+            <label for="email-updates">Email updates</label>
+          </div>
+          <div class="checkbox-option">
+            <input type="checkbox" id="sms-updates" name="sms-updates" />
+            <label for="sms-updates">SMS updates</label>
+          </div>
         </div>
 
         <div class="save-btn-container">
-          <input type="submit" value="Save Settings" />
           <button
             id="logout-btn"
             type="button"
-            style="
-              margin-top: 10px;
-              padding: 10px 20px;
-              background-color: #ff595e;
-              color: white;
-              border: none;
-              border-radius: 10px;
-              cursor: pointer;
-              font-family: monospace;
-            "
           >
             Log Out
           </button>
+          <input type="submit" value="Save Settings" />
         </div>
       </form>
     </main>

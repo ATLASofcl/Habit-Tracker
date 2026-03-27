@@ -7,7 +7,7 @@ main {
   margin: 0 auto;
 }
 
-.habit-selector,
+.controls-row,
 .chart-container,
 .info-pills {
   grid-column: 1 / -1;
@@ -19,6 +19,14 @@ main {
   }
 }
 
+.controls-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .habit-selector {
   display: flex;
   align-items: center;
@@ -28,7 +36,8 @@ main {
   font-size: 1.1em;
 }
 
-.habit-selector select {
+.habit-selector select,
+.date-selector select {
   padding: 5px 10px;
   font-family: monospace;
   font-size: 1em;
@@ -36,6 +45,12 @@ main {
   cursor: pointer;
   background-color: #181716;
   color: white;
+}
+
+.date-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .chart-container {
@@ -75,7 +90,7 @@ main {
     transparent 4px,
     transparent 8px
   );
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .chart-bar {
@@ -83,8 +98,8 @@ main {
   height: var(--bar-height, 50%);
   background: repeating-linear-gradient(
     to top,
-    #457ebd 0px,
-    #457ebd 4px,
+    var(--habit-color, #457ebd) 0px,
+    var(--habit-color, #457ebd) 4px,
     transparent 4px,
     transparent 8px
   );
@@ -129,8 +144,7 @@ main {
 
 .habit-counter {
   grid-area: counter;
-  width: 50px;
-  height: 50px;
+  padding: 8px 14px;
   background-color: #232322;
   border-radius: 15px;
   align-self: center;
@@ -139,6 +153,7 @@ main {
   align-items: center;
   justify-content: center;
   font-size: 0.9em;
+  white-space: nowrap;
 }
 
 .habit-table {
@@ -161,6 +176,15 @@ main {
 
 .habit-dot.completed {
   background-color: var(--habit-color);
+}
+
+.habit-dot.current-day {
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.habit-dot.future {
+  opacity: 0.2;
 }
 
 .stats-column {
@@ -204,5 +228,5 @@ main {
 }
 
 .info-pill.accent {
-  background-color: #457ebd;
+  background-color: var(--habit-color, #457ebd);
 }

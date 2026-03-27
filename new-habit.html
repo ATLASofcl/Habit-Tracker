@@ -40,26 +40,27 @@
     <main>
       <div class="new-habit-title">New habit:</div>
 
-      <form id="new-habit-form">
+      <form id="new-habit-form" novalidate>
         <div class="new-habit">
           <div class="habit-info">
             <table>
               <tr>
-                <td><label for="habit-name">Habit Name:</label></td>
+                <td><label for="habit-name">Habit Name: *</label></td>
                 <td>
                   <input
                     type="text"
                     id="habit-name"
                     name="habit-name"
+                    maxlength="20"
                     required
                   />
                 </td>
               </tr>
 
               <tr>
-                <td><label for="habit-emoji">Enter Emoji</label></td>
+                <td><label for="habit-emoji">Enter Emoji *</label></td>
                 <td>
-                  <input type="text" id="habit-emoji" name="habit-emoji" />
+                  <input type="text" id="habit-emoji" name="habit-emoji" required />
                 </td>
               </tr>
 
@@ -165,11 +166,11 @@
                         type="radio"
                         id="habit-color-pink"
                         name="habit-color"
-                        value="ffc6ff"
+                        value="E07BAF"
                       />
                       <div
                         class="pink-color-dot"
-                        style="--habit-color: #ffc6ff"
+                        style="--habit-color: #e07baf"
                       ></div>
                     </label>
 
@@ -179,11 +180,11 @@
                         type="radio"
                         id="habit-color-orange"
                         name="habit-color"
-                        value="fb5607"
+                        value="E8893C"
                       />
                       <div
                         class="orange-color-dot"
-                        style="--habit-color: #fb5607"
+                        style="--habit-color: #e8893c"
                       ></div>
                     </label>
                     <label>
@@ -192,11 +193,11 @@
                         type="radio"
                         id="habit-color-brown"
                         name="habit-color"
-                        value="9c6644"
+                        value="C4884D"
                       />
                       <div
                         class="brown-color-dot"
-                        style="--habit-color: #9c6644"
+                        style="--habit-color: #c4884d"
                       ></div>
                     </label>
                     <label>
@@ -205,11 +206,11 @@
                         type="radio"
                         id="habit-color-cyan"
                         name="habit-color"
-                        value="9bf6ff"
+                        value="4BA8B8"
                       />
                       <div
                         class="cyan-color-dot"
-                        style="--habit-color: #9bf6ff"
+                        style="--habit-color: #4ba8b8"
                       ></div>
                     </label>
 
@@ -219,11 +220,39 @@
                         type="radio"
                         id="habit-color-hotpink"
                         name="habit-color"
-                        value="f72585"
+                        value="C7508F"
                       />
                       <div
                         class="hotpink-color-dot"
-                        style="--habit-color: #f72585"
+                        style="--habit-color: #c7508f"
+                      ></div>
+                    </label>
+
+                    <label>
+                      <input
+                        class="teal"
+                        type="radio"
+                        id="habit-color-teal"
+                        name="habit-color"
+                        value="2E9E8F"
+                      />
+                      <div
+                        class="teal-color-dot"
+                        style="--habit-color: #2e9e8f"
+                      ></div>
+                    </label>
+
+                    <label>
+                      <input
+                        class="coral"
+                        type="radio"
+                        id="habit-color-coral"
+                        name="habit-color"
+                        value="D96B6B"
+                      />
+                      <div
+                        class="coral-color-dot"
+                        style="--habit-color: #d96b6b"
                       ></div>
                     </label>
                   </div>
@@ -235,7 +264,7 @@
           <div class="habit-goals">
             <table class="goals-container">
               <tr>
-                <td><label for="goal">How often</label></td>
+                <td><label for="goal">How often *</label></td>
                 <td>
                   <input
                     type="number"
@@ -252,6 +281,7 @@
                 <td><label for="unit">Unit</label></td>
                 <td>
                   <select name="unit" id="unit">
+                    <option value="times">Times</option>
                     <option value="cup">Cup</option>
                     <option value="pages">Pages</option>
                     <option value="minutes">Minutes</option>
@@ -276,14 +306,14 @@
               <tr>
                 <td><label for="on-days">on days</label></td>
                 <td class="on-days-selector">
-                  <input type="radio" name="on-days" id="mon" value="monday" />
+                  <input type="checkbox" name="on-days" id="mon" value="monday" />
                   <label for="mon">Mon</label>
 
-                  <input type="radio" name="on-days" id="tue" value="tuesday" />
+                  <input type="checkbox" name="on-days" id="tue" value="tuesday" />
                   <label for="tue">Tue</label>
 
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="on-days"
                     id="wed"
                     value="wednesday"
@@ -291,25 +321,25 @@
                   <label for="wed">Wed</label>
 
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="on-days"
                     id="thu"
                     value="thursday"
                   />
                   <label for="thu">Thu</label>
 
-                  <input type="radio" name="on-days" id="fri" value="friday" />
+                  <input type="checkbox" name="on-days" id="fri" value="friday" />
                   <label for="fri">Fri</label>
 
                   <input
-                    type="radio"
+                    type="checkbox"
                     name="on-days"
                     id="sat"
                     value="saturday"
                   />
                   <label for="sat">Sat</label>
 
-                  <input type="radio" name="on-days" id="sun" value="sunday" />
+                  <input type="checkbox" name="on-days" id="sun" value="sunday" />
                   <label for="sun">Sun</label>
                 </td>
               </tr>

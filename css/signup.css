@@ -102,6 +102,12 @@ header h1 {
   margin-bottom: 6px;
 }
 
+input.input-error,
+input.input-error:focus {
+  border: 2px solid red !important;
+  outline: none;
+}
+
 .signup-btn {
   display: inline-block;
   padding: 4px 10px;
@@ -109,4 +115,37 @@ header h1 {
   color: white;
   border-radius: 10px;
   text-decoration: none;
+}
+
+/* Light theme overrides for signup page */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #181716;
+}
+
+body.light-theme header {
+  background: #e0e0e0;
+}
+
+body.light-theme header h1 {
+  color: #181716;
+}
+
+body.light-theme .signup-form,
+body.light-theme .signup-box {
+  background: #d9d9d9;
+  color: #181716;
+}
+
+body.light-theme .signup-form input[type="email"],
+body.light-theme .signup-form input[type="password"],
+body.light-theme .signup-form input[type="text"] {
+  background: #fff;
+  color: #181716;
+  border-color: #aaa;
+}
+
+body.light-theme .signup-btn {
+  background: #d9d9d9;
+  color: #181716;
 }

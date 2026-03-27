@@ -4,6 +4,9 @@ body {
   margin: 0;
   padding: 0;
   color: white;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
@@ -14,7 +17,7 @@ main {
 
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 20px;
 }
 
 section {
@@ -145,9 +148,9 @@ header {
 }
 
 footer {
-  margin-top: 30px;
+  margin-top: auto;
   padding: 20px;
-  border-top: 2px solid #d9d9d9;
+  border-top: 2px solid #2b2b2b;
   color: white;
   font-size: 15px;
 }
@@ -158,4 +161,40 @@ footer a:hover,
 footer a:active {
   color: grey;
   text-decoration: none;
+}
+
+/* Light theme overrides for contact page */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #181716;
+}
+
+body.light-theme header {
+  background-color: #e0e0e0;
+}
+
+body.light-theme .header-title h1 {
+  color: #181716;
+}
+
+body.light-theme .hamburger-icon span {
+  background-color: #181716;
+}
+
+body.light-theme .nav-panel {
+  background-color: #e0e0e0;
+}
+
+body.light-theme .nav-list li a {
+  color: #181716;
+}
+
+body.light-theme section {
+  background: #d9d9d9;
+  color: #181716;
+}
+
+body.light-theme footer {
+  color: #181716;
+  border-top-color: #ccc;
 }

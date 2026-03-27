@@ -132,6 +132,15 @@ tr td:first-child {
   border: none;
 }
 
+input.input-error {
+  border: 2px solid red;
+}
+
+input.input-error:focus {
+  border: 2px solid red;
+  outline: none;
+}
+
 .new-habit-title,
 .habit-info,
 .habit-goals,
