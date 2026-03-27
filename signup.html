@@ -14,13 +14,13 @@
 
     <main>
       <div class="signup-container">
-        <form class="signup-form">
+        <form class="signup-form" novalidate>
           <h2>Sign Up:</h2>
 
-          <label for="signup-name">Full Name:</label>
+          <label for="signup-name">Full Name: *</label>
           <input id="signup-name" name="name" type="text" autocomplete="name" />
 
-          <label for="signup-email">Email:</label>
+          <label for="signup-email">Email: *</label>
           <input
             id="signup-email"
             name="email"
@@ -28,7 +28,7 @@
             autocomplete="email"
           />
 
-          <label for="signup-password">Password:</label>
+          <label for="signup-password">Password: *</label>
           <input
             id="signup-password"
             name="password"
@@ -36,14 +36,18 @@
             autocomplete="new-password"
           />
 
-          <label for="signup-country">Country:</label>
+          <label for="signup-confirm-password">Confirm Password: *</label>
           <input
-            id="signup-country"
-            name="country"
-            type="text"
-            autocomplete="country"
+            id="signup-confirm-password"
+            name="confirm-password"
+            type="password"
+            autocomplete="new-password"
           />
 
+          <p
+            id="signup-error"
+            style="color: #ff595e; display: none; margin-top: 10px"
+          ></p>
           <input class="signup-submit" type="submit" value="Sign Up" />
         </form>
 
@@ -53,5 +57,7 @@
         </div>
       </div>
     </main>
+    <script src="js/utils.js"></script>
+    <script src="js/signup.js"></script>
   </body>
 </html>

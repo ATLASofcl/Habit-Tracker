@@ -36,13 +36,16 @@
     </header>
 
     <main>
-      <!-- Habit selector -->
-      <div class="habit-selector">
-        <label for="habit-select">Select Habit:</label>
-        <select id="habit-select">
-          <option value="water">Drink Water</option>
-          <option value="reading">Reading</option>
-        </select>
+      <!-- Controls row -->
+      <div class="controls-row">
+        <div class="habit-selector">
+          <label for="habit-select">Select Habit:</label>
+          <select id="habit-select"></select>
+        </div>
+        <div class="date-selector">
+          <select id="month-select"></select>
+          <select id="year-select"></select>
+        </div>
       </div>
 
       <!-- Bar chart -->
@@ -184,5 +187,7 @@
         <div class="info-pill accent">Total Check-ins: &nbsp;134</div>
       </div>
     </main>
+    <script src="js/utils.js"></script>
+    <script src="js/progress.js"></script>
   </body>
 </html>

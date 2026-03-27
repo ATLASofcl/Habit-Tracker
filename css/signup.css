@@ -1,112 +1,151 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    background: black;
-    color: white;
-    min-height: 100vh;
+  background: black;
+  color: white;
+  min-height: 100vh;
 }
 
 header {
-    background: #373737;
-    padding: 10px 15px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: sticky;
-    top: 0;
+  background: #373737;
+  padding: 10px 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0;
 }
 
 header h1 {
-    font-size: 1.5em;
+  font-size: 1.5em;
 }
 
 .signup-page {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
 }
 
 .signup-container {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    gap: 20px;
-    max-width: 680px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 30px 15px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  gap: 20px;
+  max-width: 680px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 30px 15px;
 }
 
 .signup-container label {
-    font-size: 1.25em;
+  font-size: 1.25em;
 }
 
 .signup-form,
 .signup-box {
-    background: #2f2f2f;
-    padding: 18px 16px;
-    border-radius: 12px;
-    flex: 1 1 260px;
-    max-width: 300px;
-    display: flex;
-    flex-direction: column;
+  background: #2f2f2f;
+  padding: 18px 16px;
+  border-radius: 12px;
+  flex: 1 1 260px;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
 }
 
 .signup-form h2 {
-    margin-bottom: 12px;
+  margin-bottom: 12px;
 }
 
 .signup-form label {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .signup-form input[type="email"],
 .signup-form input[type="password"],
 .signup-form input[type="text"] {
-    width: 100%;
-    margin-top: 6px;
-    padding: 8px 10px;
-    background: transparent;
-    border: 1px solid #555;
-    color: white;
-    border-radius: 8px;
+  width: 100%;
+  margin-top: 6px;
+  padding: 8px 10px;
+  background: transparent;
+  border: 1px solid #555;
+  color: white;
+  border-radius: 8px;
 }
 
 .signup-submit {
-    margin-top: 14px;
-    padding: 10px;
-    border: none;
-    border-radius: 10px;
-    background: white;
-    color: black;
-    cursor: pointer;
-    width: 100%;
-    font-size: 1em;
+  margin-top: 14px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  color: black;
+  cursor: pointer;
+  width: 100%;
+  font-size: 1em;
 }
 
 .signup-box {
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    font-size: 1.25em;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.25em;
 }
 
 .signup-box p {
-    margin-bottom: 6px;
+  margin-bottom: 6px;
+}
+
+input.input-error,
+input.input-error:focus {
+  border: 2px solid red !important;
+  outline: none;
 }
 
 .signup-btn {
-    display: inline-block;
-    padding: 4px 10px;
-    background: black;
-    color: white;
-    border-radius: 10px;
-    text-decoration: none;
+  display: inline-block;
+  padding: 4px 10px;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  text-decoration: none;
+}
+
+/* Light theme overrides for signup page */
+body.light-theme {
+  background-color: #f5f5f5;
+  color: #181716;
+}
+
+body.light-theme header {
+  background: #e0e0e0;
+}
+
+body.light-theme header h1 {
+  color: #181716;
+}
+
+body.light-theme .signup-form,
+body.light-theme .signup-box {
+  background: #d9d9d9;
+  color: #181716;
+}
+
+body.light-theme .signup-form input[type="email"],
+body.light-theme .signup-form input[type="password"],
+body.light-theme .signup-form input[type="text"] {
+  background: #fff;
+  color: #181716;
+  border-color: #aaa;
+}
+
+body.light-theme .signup-btn {
+  background: #d9d9d9;
+  color: #181716;
 }

@@ -27,8 +27,8 @@ header {
   padding: 1vh;
 }
 
-.hamburger-icon:hover{
-    cursor: pointer;
+.hamburger-icon:hover {
+  cursor: pointer;
 }
 
 #menu-toggle {
