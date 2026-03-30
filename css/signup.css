@@ -117,7 +117,6 @@ input.input-error:focus {
   text-decoration: none;
 }
 
-/* Light theme overrides for signup page */
 body.light-theme {
   background-color: #f5f5f5;
   color: #181716;

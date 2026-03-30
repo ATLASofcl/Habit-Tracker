@@ -1,9 +1,6 @@
-// ============================================
-// feedback.js — Handle the feedback form
-// ============================================
+
 
 document.addEventListener("DOMContentLoaded", function () {
-  // Theme support (no auth required for feedback)
   applyTheme();
   updateNavAuthLink();
 
@@ -14,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var ratingContainer = document.querySelector(".rating-container");
   var ratingRadios = document.querySelectorAll('input[name="rating"]');
 
-  // Clear red highlight on keydown for keyboard-typed fields
   nameInput.addEventListener("keydown", function () {
     this.classList.remove("input-error");
   });
@@ -22,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
     this.classList.remove("input-error");
   });
 
-  // Clear rating error when a star is clicked
   ratingRadios.forEach(function (radio) {
     radio.addEventListener("change", function () {
       ratingContainer.classList.remove("rating-error");
@@ -32,16 +27,13 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Read form values
     var name = nameInput.value.trim();
     var email = emailInput.value.trim();
     var occupation = document.getElementById("occupation").value;
 
-    // Star rating (1-5)
     var ratingRadio = document.querySelector('input[name="rating"]:checked');
     var rating = ratingRadio ? parseInt(ratingRadio.value) : 0;
 
-    // "What did you like" checkboxes — collect all checked values
     var likedCheckboxes = document.querySelectorAll(
       'input[name="liked"]:checked',
     );
@@ -54,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var recommend = document.getElementById("recommend").value;
     var comment = document.getElementById("comment").value.trim();
 
-    // Validate required fields and highlight invalid ones
     var hasError = false;
 
     nameInput.classList.remove("input-error");
@@ -77,14 +68,12 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Validate email format
     var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(email)) {
       emailInput.classList.add("input-error");
       return;
     }
 
-    // Create feedback object
     var feedback = {
       id: generateId("fb"),
       name: name,
@@ -98,12 +87,10 @@ document.addEventListener("DOMContentLoaded", function () {
       submittedAt: new Date().toISOString(),
     };
 
-    // Save to localStorage
     var allFeedback = getFromStorage(KEYS.feedback) || [];
     allFeedback.push(feedback);
     saveToStorage(KEYS.feedback, allFeedback);
 
-    // Show success message
     form.innerHTML =
       '<div style="text-align: center; color: white; padding: 40px;">' +
       "<h2>Thank you for your feedback!</h2>" +

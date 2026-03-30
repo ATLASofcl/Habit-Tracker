@@ -1,7 +1,3 @@
-// ============================================
-// settings.js — User preferences, theme, logout
-// ============================================
-
 document.addEventListener("DOMContentLoaded", function () {
   requireAuth();
   applyTheme();
@@ -10,16 +6,13 @@ document.addEventListener("DOMContentLoaded", function () {
   var user = getCurrentUser();
   var form = document.querySelector(".settings-container");
 
-  // Load current settings into form
   loadSettings(user);
 
-  // Save settings on form submit
   form.addEventListener("submit", function (e) {
     e.preventDefault();
     handleSaveSettings(user);
   });
 
-  // Logout button
   var logoutBtn = document.getElementById("logout-btn");
   if (logoutBtn) {
     logoutBtn.addEventListener("click", function () {
@@ -29,7 +22,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
-// Fill form fields with saved settings
 function loadSettings(user) {
   var settings = getUserSettings(user.id);
 
@@ -38,19 +30,16 @@ function loadSettings(user) {
   document.getElementById("settings-email").value =
     settings.email || user.email;
 
-  // Theme radio
   var themeValue = settings.theme || "dark";
   var themeRadio = document.getElementById(themeValue);
   if (themeRadio) themeRadio.checked = true;
 
-  // Notification checkboxes
   document.getElementById("email-updates").checked =
     settings.emailNotifications || false;
   document.getElementById("sms-updates").checked =
     settings.smsNotifications || false;
 }
 
-// Read form and save to localStorage
 function handleSaveSettings(user) {
   var settings = {
     displayName: document.getElementById("display-name").value.trim(),
@@ -63,9 +52,8 @@ function handleSaveSettings(user) {
   };
 
   saveUserSettings(user.id, settings);
-  applyTheme(); // apply theme change immediately
+  applyTheme();
 
-  // Show confirmation
   var saveBtn = document.querySelector(
     '.settings-container input[type="submit"]',
   );

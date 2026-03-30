@@ -1,7 +1,3 @@
-// ============================================
-// new-habit.js — Handle the "Create Habit" form
-// ============================================
-
 document.addEventListener("DOMContentLoaded", function () {
   requireAuth();
   applyTheme();
@@ -9,13 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   var form = document.getElementById("new-habit-form");
 
-  // Restrict emoji input to a single emoji only
   var emojiInput = document.getElementById("habit-emoji");
   var emojiRegex = /\p{Emoji_Presentation}|\p{Extended_Pictographic}/u;
 
   emojiInput.addEventListener("input", function () {
     var value = this.value;
-    // Extract all emoji characters using segmenter
     var segments = [];
     if (typeof Intl !== "undefined" && Intl.Segmenter) {
       var segmenter = new Intl.Segmenter("en", { granularity: "grapheme" });
@@ -25,16 +19,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
     }
-    // Keep only the first emoji, discard everything else
     this.value = segments.length > 0 ? segments[0] : "";
   });
 
-  // Clear red highlight on keydown for keyboard-typed fields
   document.getElementById("habit-name").addEventListener("keydown", function () {
     this.classList.remove("input-error");
   });
 
-  // Clear red highlight on any input for non-keyboard fields
   emojiInput.addEventListener("input", function () {
     this.classList.remove("input-error");
   });
@@ -45,13 +36,11 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Read form values
     var name = document.getElementById("habit-name").value.trim();
     var emoji = document.getElementById("habit-emoji").value.trim();
     var description = document.getElementById("habit-description").value.trim();
     var category = document.getElementById("habit-category").value;
 
-    // Color — the radio values don't have "#", so we prepend it
     var colorRadio = document.querySelector(
       'input[name="habit-color"]:checked',
     );
@@ -61,7 +50,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var goalFrequency = parseInt(goalInput.value) || 0;
     var goalUnit = document.getElementById("unit").value;
 
-    // Optional reminder fields
     var reminderTime = document.getElementById("time").value || "";
     var dayCheckboxes = document.querySelectorAll('input[name="on-days"]:checked');
     var reminderDays = [];
@@ -69,7 +57,6 @@ document.addEventListener("DOMContentLoaded", function () {
       reminderDays.push(cb.value);
     });
 
-    // Validate required fields and highlight invalid ones
     var nameInput = document.getElementById("habit-name");
     var requiredFields = [nameInput, emojiInput, goalInput];
     var hasError = false;
@@ -95,7 +82,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Create habit object
     var user = getCurrentUser();
     var newHabit = {
       id: generateId("habit"),
@@ -112,12 +98,10 @@ document.addEventListener("DOMContentLoaded", function () {
       createdAt: toDateString(new Date()),
     };
 
-    // Save to localStorage
     var habits = getFromStorage(KEYS.habits) || [];
     habits.push(newHabit);
     saveToStorage(KEYS.habits, habits);
 
-    // Go back to dashboard
     window.location.href = "index.html";
   });
 });

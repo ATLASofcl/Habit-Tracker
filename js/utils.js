@@ -1,8 +1,3 @@
-// ============================================
-// utils.js — Shared helpers used by every page
-// ============================================
-
-// --- localStorage keys (defined once to avoid typos) ---
 var KEYS = {
   users: "habitTracker_users",
   currentUser: "habitTracker_currentUser",
@@ -12,14 +7,10 @@ var KEYS = {
   feedback: "habitTracker_feedback",
 };
 
-// --- ID generator ---
-// Creates a unique ID like "user_1710856200000"
 function generateId(prefix) {
   return prefix + "_" + Date.now();
 }
 
-// --- localStorage helpers ---
-// Safely read from localStorage (returns null if key missing or data corrupted)
 function getFromStorage(key) {
   try {
     return JSON.parse(localStorage.getItem(key));
@@ -28,13 +19,10 @@ function getFromStorage(key) {
   }
 }
 
-// Save a value to localStorage as JSON
 function saveToStorage(key, value) {
   localStorage.setItem(key, JSON.stringify(value));
 }
 
-// --- Auth helpers ---
-// Get the currently logged-in user object, or null
 function getCurrentUser() {
   var userId = getFromStorage(KEYS.currentUser);
   if (!userId) return null;
@@ -47,16 +35,13 @@ function getCurrentUser() {
   );
 }
 
-// Redirect to login page if not logged in
-// Call this at the top of every protected page
+
 function requireAuth() {
   if (!getCurrentUser()) {
     window.location.href = "login.html";
   }
 }
 
-// --- Habit helpers ---
-// Get all habits belonging to a user
 function getUserHabits(userId) {
   var habits = getFromStorage(KEYS.habits) || [];
   return habits.filter(function (h) {
@@ -64,7 +49,6 @@ function getUserHabits(userId) {
   });
 }
 
-// Get all completion records for a specific habit
 function getCompletionsForHabit(habitId) {
   var completions = getFromStorage(KEYS.completions) || [];
   return completions.filter(function (c) {
@@ -72,7 +56,6 @@ function getCompletionsForHabit(habitId) {
   });
 }
 
-// Check if a habit was completed on a specific date
 function isCompletedOnDate(habitId, dateString) {
   var completions = getFromStorage(KEYS.completions) || [];
   return completions.some(function (c) {
@@ -80,7 +63,6 @@ function isCompletedOnDate(habitId, dateString) {
   });
 }
 
-// Toggle a habit's completion for a date (add if missing, remove if exists)
 function toggleCompletion(habitId, dateString) {
   var completions = getFromStorage(KEYS.completions) || [];
 
@@ -89,18 +71,15 @@ function toggleCompletion(habitId, dateString) {
   });
 
   if (index !== -1) {
-    // Already completed — remove it
     completions.splice(index, 1);
   } else {
-    // Not completed — add it
     completions.push({ habitId: habitId, date: dateString });
   }
 
   saveToStorage(KEYS.completions, completions);
 }
 
-// --- Date helpers ---
-// Format a Date object to "Friday, Mar 20, 2026"
+
 function formatDate(dateObj) {
   return dateObj.toLocaleDateString("en-US", {
     weekday: "long",
@@ -110,8 +89,6 @@ function formatDate(dateObj) {
   });
 }
 
-// Convert a Date object to "YYYY-MM-DD" string for storage
-// Uses local date parts (not UTC) to avoid timezone shifts
 function toDateString(dateObj) {
   var year = dateObj.getFullYear();
   var month = String(dateObj.getMonth() + 1).padStart(2, "0");
@@ -119,8 +96,7 @@ function toDateString(dateObj) {
   return year + "-" + month + "-" + day;
 }
 
-// --- Settings helpers ---
-// Get settings for a user, with sensible defaults
+
 function getUserSettings(userId) {
   var allSettings = getFromStorage(KEYS.settings) || {};
   return (
@@ -134,15 +110,12 @@ function getUserSettings(userId) {
   );
 }
 
-// Save settings for a user
 function saveUserSettings(userId, settingsObj) {
   var allSettings = getFromStorage(KEYS.settings) || {};
   allSettings[userId] = settingsObj;
   saveToStorage(KEYS.settings, allSettings);
 }
 
-// --- Theme ---
-// Apply the user's theme preference (adds/removes "light-theme" class on body)
 function applyTheme() {
   var user = getCurrentUser();
   if (!user) return;
@@ -155,17 +128,13 @@ function applyTheme() {
   }
 }
 
-// --- Navigation auth link ---
-// Updates the nav menu to show "Log Out" if logged in, or "Log In" if not
 function updateNavAuthLink() {
   var navList = document.querySelector(".nav-list");
   if (!navList) return;
 
-  // Remove existing auth link if present
   var existing = document.getElementById("nav-auth-item");
   if (existing) existing.remove();
 
-  // Create new auth link
   var li = document.createElement("li");
   li.id = "nav-auth-item";
   var a = document.createElement("a");

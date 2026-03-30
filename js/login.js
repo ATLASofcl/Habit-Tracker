@@ -1,11 +1,6 @@
-// ============================================
-// login.js — Handle user login
-// ============================================
-
 document.addEventListener("DOMContentLoaded", function () {
   applyTheme();
 
-  // If already logged in, go to dashboard
   if (getCurrentUser()) {
     window.location.href = "index.html";
     return;
@@ -18,7 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var passwordInput = document.getElementById("login-password");
   var requiredFields = [emailInput, passwordInput];
 
-  // Clear red highlight on keypress
   requiredFields.forEach(function (field) {
     field.addEventListener("keydown", function () {
       this.classList.remove("input-error");
@@ -31,7 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     var email = emailInput.value.trim();
     var password = passwordInput.value;
 
-    // Highlight empty required fields
     var hasError = false;
     requiredFields.forEach(function (field) {
       field.classList.remove("input-error");
@@ -49,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Find matching user
     var users = getFromStorage(KEYS.users) || [];
     var user = users.find(function (u) {
       return (
@@ -62,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Save current user and redirect to dashboard
     saveToStorage(KEYS.currentUser, user.id);
     window.location.href = "index.html";
   });

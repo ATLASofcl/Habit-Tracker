@@ -1,8 +1,3 @@
-// ============================================
-// index.js — Dashboard: habit cards, check-offs, date navigation
-// ============================================
-
-// The date currently being viewed (defaults to today)
 var currentDate = new Date();
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -10,7 +5,6 @@ document.addEventListener("DOMContentLoaded", function () {
   applyTheme();
   updateNavAuthLink();
 
-  // Attach date navigation buttons
   document
     .querySelector(".decrease-btn")
     .addEventListener("click", handlePrevDay);
@@ -18,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     .querySelector(".increase-btn")
     .addEventListener("click", handleNextDay);
 
-  // Date picker — click the date label to open it
   var dateLabel = document.querySelector(".current-date");
   var datePicker = document.querySelector(".date-picker");
 
@@ -38,24 +31,20 @@ document.addEventListener("DOMContentLoaded", function () {
     renderDashboard();
   });
 
-  // Initial render
   renderDashboard();
 });
 
-// --- Main render function ---
 function renderDashboard() {
   renderHabits();
   updateDateDisplay();
 }
 
-// --- Render all habit cards ---
 function renderHabits() {
   var container = document.getElementById("habits-container");
   var noHabitsMsg = document.getElementById("no-habits-msg");
   var user = getCurrentUser();
   var habits = getUserHabits(user.id);
 
-  // Clear existing cards
   container.innerHTML = "";
 
   if (habits.length === 0) {
@@ -71,13 +60,11 @@ function renderHabits() {
   });
 }
 
-// --- Build a single habit card DOM element ---
 function createHabitCard(habit) {
   var card = document.createElement("div");
   card.className = "habit";
   card.style.setProperty("--habit-color", habit.color);
 
-  // Icon (shows emoji if set, otherwise just the colored circle)
   var icon = document.createElement("div");
   icon.className = "habit-icon";
   if (habit.emoji) {
@@ -89,13 +76,11 @@ function createHabitCard(habit) {
   }
   card.appendChild(icon);
 
-  // Name
   var name = document.createElement("div");
   name.className = "habit-name";
   name.textContent = habit.name;
   card.appendChild(name);
 
-  // Checkbox (click to toggle today's completion)
   var checkbox = document.createElement("div");
   checkbox.className = "habit-checkbox";
   var todayStr = toDateString(currentDate);
@@ -104,7 +89,7 @@ function createHabitCard(habit) {
   }
   checkbox.addEventListener("click", function () {
     toggleCompletion(habit.id, todayStr);
-    renderDashboard(); // re-render to update dots + checkbox
+    renderDashboard(); 
     checkAllHabitsComplete();
   });
   checkbox.addEventListener("mouseenter", function () {
@@ -119,7 +104,6 @@ function createHabitCard(habit) {
   });
   card.appendChild(checkbox);
 
-  // Monthly dot grid — shows all days in the current month
   var table = document.createElement("div");
   table.className = "habit-table";
 
@@ -146,7 +130,6 @@ function createHabitCard(habit) {
   }
   card.appendChild(table);
 
-  // Context menu (long-press on touch, right-click on desktop)
   var pressTimer = null;
   var didLongPress = false;
 
@@ -176,7 +159,6 @@ function createHabitCard(habit) {
     clearTimeout(pressTimer);
   });
 
-  // Prevent click from firing after a long-press
   card.addEventListener(
     "click",
     function (e) {
@@ -192,16 +174,13 @@ function createHabitCard(habit) {
   return card;
 }
 
-// --- Delete a habit and its completions ---
 function deleteHabit(habitId) {
-  // Remove the habit
   var habits = getFromStorage(KEYS.habits) || [];
   habits = habits.filter(function (h) {
     return h.id !== habitId;
   });
   saveToStorage(KEYS.habits, habits);
 
-  // Remove its completions
   var completions = getFromStorage(KEYS.completions) || [];
   completions = completions.filter(function (c) {
     return c.habitId !== habitId;
@@ -209,7 +188,6 @@ function deleteHabit(habitId) {
   saveToStorage(KEYS.completions, completions);
 }
 
-// --- Context menu ---
 function showContextMenu(x, y, habit) {
   dismissContextMenu();
 
@@ -234,7 +212,6 @@ function showContextMenu(x, y, habit) {
   overlay.appendChild(menu);
   document.body.appendChild(overlay);
 
-  // Position the menu, keeping it within the viewport
   var menuRect = menu.getBoundingClientRect();
   var viewportW = window.innerWidth;
   var viewportH = window.innerHeight;
@@ -256,7 +233,6 @@ function showContextMenu(x, y, habit) {
   menu.style.left = left + "px";
   menu.style.top = top + "px";
 
-  // Dismiss on overlay click, scroll, or resize
   overlay.addEventListener("click", function (e) {
     if (e.target === overlay) dismissContextMenu();
   });
@@ -269,7 +245,6 @@ function dismissContextMenu() {
   if (existing) existing.remove();
 }
 
-// --- Update the date display in the footer ---
 function updateDateDisplay() {
   var dateEl = document.querySelector(".current-date");
   dateEl.textContent = formatDate(currentDate);
@@ -278,7 +253,6 @@ function updateDateDisplay() {
   datePicker.value = toDateString(currentDate);
 }
 
-// --- Day navigation ---
 function handlePrevDay() {
   currentDate.setDate(currentDate.getDate() - 1);
   renderDashboard();
@@ -293,7 +267,6 @@ function handleNextDay() {
   }
 }
 
-// --- Confetti celebration when all habits are complete ---
 function checkAllHabitsComplete() {
   var user = getCurrentUser();
   var habits = getUserHabits(user.id);
@@ -310,7 +283,6 @@ function checkAllHabitsComplete() {
 }
 
 function launchConfetti() {
-  // Prevent overlapping confetti bursts
   if (document.querySelector(".confetti-container")) return;
 
   var container = document.createElement("div");
@@ -343,7 +315,6 @@ function launchConfetti() {
     container.appendChild(piece);
   }
 
-  // Remove after the animation finishes
   setTimeout(function () {
     container.remove();
   }, 3000);

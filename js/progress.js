@@ -1,7 +1,3 @@
-// ============================================
-// progress.js — Charts, streaks, and statistics
-// ============================================
-
 document.addEventListener("DOMContentLoaded", function () {
   requireAuth();
   applyTheme();
@@ -14,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var monthSelect = document.getElementById("month-select");
   var yearSelect = document.getElementById("year-select");
 
-  // Re-render when user picks a different habit or date
   selector.addEventListener("change", function () {
     renderProgressForHabit(selector.value);
   });
@@ -25,13 +20,11 @@ document.addEventListener("DOMContentLoaded", function () {
     renderProgressForHabit(selector.value);
   });
 
-  // Render for the first habit if one exists
   if (selector.value) {
     renderProgressForHabit(selector.value);
   }
 });
 
-// --- Fill the month and year dropdowns ---
 function populateDateSelectors() {
   var monthSelect = document.getElementById("month-select");
   var yearSelect = document.getElementById("year-select");
@@ -50,7 +43,6 @@ function populateDateSelectors() {
   });
   monthSelect.value = today.getMonth();
 
-  // Show years from 5 years ago to current year
   var currentYear = today.getFullYear();
   for (var y = currentYear; y >= currentYear - 5; y--) {
     var opt = document.createElement("option");
@@ -61,20 +53,17 @@ function populateDateSelectors() {
   yearSelect.value = currentYear;
 }
 
-// --- Read the selected year and month from the dropdowns ---
 function getSelectedDate() {
   var month = parseInt(document.getElementById("month-select").value);
   var year = parseInt(document.getElementById("year-select").value);
   return { year: year, month: month };
 }
 
-// --- Fill the dropdown with the user's habits ---
 function populateHabitSelector() {
   var user = getCurrentUser();
   var habits = getUserHabits(user.id);
   var selector = document.getElementById("habit-select");
 
-  // Clear existing options
   selector.innerHTML = "";
 
   if (habits.length === 0) {
@@ -93,11 +82,9 @@ function populateHabitSelector() {
   });
 }
 
-// --- Main render function for a selected habit ---
 function renderProgressForHabit(habitId) {
   if (!habitId) return;
 
-  // Apply the habit's color to the whole page so bars and pills match
   var habits = getFromStorage(KEYS.habits) || [];
   var habit = habits.find(function (h) {
     return h.id === habitId;
@@ -112,34 +99,29 @@ function renderProgressForHabit(habitId) {
   updateInfoPills(habitId);
 }
 
-// --- Bar chart: monthly completion percentages ---
 function updateBarChart(habitId) {
   var completions = getCompletionsForHabit(habitId);
   var bars = document.querySelectorAll(".chart-bar");
   var selected = getSelectedDate();
 
-  // Count completions per month for the selected year
   var monthlyCounts = new Array(12).fill(0);
   completions.forEach(function (c) {
     var parts = c.date.split("-");
     var year = parseInt(parts[0]);
-    var month = parseInt(parts[1]) - 1; // 0-indexed
+    var month = parseInt(parts[1]) - 1; 
     if (year === selected.year) {
       monthlyCounts[month]++;
     }
   });
 
-  // Calculate percentage for each month (completions / days in month * 100)
   bars.forEach(function (bar, i) {
     var daysInMonth = new Date(selected.year, i + 1, 0).getDate();
     var percent = Math.round((monthlyCounts[i] / daysInMonth) * 100);
-    // Ensure at least 2% height so bars are visible if there's any data
     if (percent > 0 && percent < 2) percent = 2;
     bar.style.setProperty("--bar-height", percent + "%");
   });
 }
 
-// --- Habit card on progress page ---
 function updateHabitCard(habitId) {
   var habits = getFromStorage(KEYS.habits) || [];
   var habit = habits.find(function (h) {
@@ -150,12 +132,10 @@ function updateHabitCard(habitId) {
   var card = document.querySelector(".habit");
   if (!card) return;
 
-  // Update color and name
   card.style.setProperty("--habit-color", habit.color);
   var nameEl = card.querySelector(".habit-name");
   if (nameEl) nameEl.textContent = habit.name;
 
-  // Update icon
   var iconEl = card.querySelector(".habit-icon");
   if (iconEl && habit.emoji) {
     iconEl.textContent = habit.emoji;
@@ -167,7 +147,6 @@ function updateHabitCard(habitId) {
     iconEl.textContent = "";
   }
 
-  // Update counter (completions for selected month)
   var counterEl = card.querySelector(".habit-counter");
   var selected = getSelectedDate();
   if (counterEl) {
@@ -181,7 +160,6 @@ function updateHabitCard(habitId) {
     counterEl.textContent = monthCompletions.length + " this month";
   }
 
-  // Rebuild dot grid — show all days in the selected month (same rules as index page)
   var table = card.querySelector(".habit-table");
   if (table) {
     table.innerHTML = "";
@@ -208,7 +186,6 @@ function updateHabitCard(habitId) {
   }
 }
 
-// --- Stats: streaks and completion percentage ---
 function updateStats(habitId) {
   var completions = getCompletionsForHabit(habitId);
   var dates = completions
@@ -217,17 +194,15 @@ function updateStats(habitId) {
     })
     .sort();
 
-  // Current streak: consecutive days ending today (or most recent)
   var currentStreak = calculateCurrentStreak(dates);
   var highestStreak = calculateHighestStreak(dates);
 
-  // Best month: find the month with the most completions
   var bestMonthLabel = "N/A";
   var bestMonthCount = 0;
   if (completions.length > 0) {
     var monthBuckets = {};
     completions.forEach(function (c) {
-      var key = c.date.substring(0, 7); // "YYYY-MM"
+      var key = c.date.substring(0, 7); 
       monthBuckets[key] = (monthBuckets[key] || 0) + 1;
     });
     var bestKey = "";
@@ -248,15 +223,12 @@ function updateStats(habitId) {
     }
   }
 
-  // Total days completed (lifetime)
   var totalDays = completions.length;
 
-  // Yearly completion percentage for the selected year
   var selected = getSelectedDate();
   var today = new Date();
   var yearStart = new Date(selected.year, 0, 1);
   var yearEnd = new Date(selected.year, 11, 31);
-  // If viewing the current year, count days up to today; otherwise the full year
   var endDate = selected.year === today.getFullYear() ? today : yearEnd;
   var dayCount = Math.ceil((endDate - yearStart) / (1000 * 60 * 60 * 24)) + 1;
   var thisYearCompletions = completions.filter(function (c) {
@@ -264,7 +236,6 @@ function updateStats(habitId) {
   }).length;
   var yearPercent = Math.round((thisYearCompletions / dayCount) * 100);
 
-  // Monthly completion percentage for the selected month
   var monthNames = [
     "January", "February", "March", "April", "May", "June",
     "July", "August", "September", "October", "November", "December",
@@ -280,7 +251,6 @@ function updateStats(habitId) {
   }).length;
   var monthPercent = Math.round((thisMonthCompletions / monthDayCount) * 100);
 
-  // Update stat boxes
   var statBoxes = document.querySelectorAll(".stat-box");
   if (statBoxes.length >= 2) {
     statBoxes[0].innerHTML =
@@ -315,24 +285,21 @@ function updateStats(habitId) {
   }
 }
 
-// Count consecutive days backwards from today
 function calculateCurrentStreak(sortedDates) {
   if (sortedDates.length === 0) return 0;
 
   var streak = 0;
   var checkDate = new Date();
 
-  // Check if today is completed; if not, start from yesterday
   var todayStr = toDateString(checkDate);
   if (sortedDates.indexOf(todayStr) === -1) {
     checkDate.setDate(checkDate.getDate() - 1);
     todayStr = toDateString(checkDate);
     if (sortedDates.indexOf(todayStr) === -1) {
-      return 0; // neither today nor yesterday completed
+      return 0; 
     }
   }
 
-  // Walk backwards counting consecutive days
   while (sortedDates.indexOf(toDateString(checkDate)) !== -1) {
     streak++;
     checkDate.setDate(checkDate.getDate() - 1);
@@ -341,7 +308,6 @@ function calculateCurrentStreak(sortedDates) {
   return streak;
 }
 
-// Find the longest run of consecutive days
 function calculateHighestStreak(sortedDates) {
   if (sortedDates.length === 0) return 0;
 
@@ -359,13 +325,11 @@ function calculateHighestStreak(sortedDates) {
     } else if (Math.round(diff) > 1) {
       current = 1;
     }
-    // diff === 0 means duplicate date, skip
   }
 
   return maxStreak;
 }
 
-// --- Info pills: start date, average, total ---
 function updateInfoPills(habitId) {
   var habits = getFromStorage(KEYS.habits) || [];
   var habit = habits.find(function (h) {
@@ -376,7 +340,6 @@ function updateInfoPills(habitId) {
 
   if (!habit || pills.length < 3) return;
 
-  // Habit started date
   var startDate = new Date(habit.createdAt + "T00:00:00");
   var startFormatted = startDate.toLocaleDateString("en-US", {
     month: "long",
@@ -385,7 +348,6 @@ function updateInfoPills(habitId) {
   });
   pills[0].textContent = "Habit started on: " + startFormatted;
 
-  // Average per month
   var today = new Date();
   var monthsSinceCreation =
     (today.getFullYear() - startDate.getFullYear()) * 12 +
@@ -396,6 +358,5 @@ function updateInfoPills(habitId) {
   pills[1].textContent =
     "Average time per month: " + avgPerMonth + " Days / Month";
 
-  // Total check-ins
   pills[2].textContent = "Total Check-ins: " + completions.length;
 }

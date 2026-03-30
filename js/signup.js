@@ -1,11 +1,6 @@
-// ============================================
-// signup.js — Handle user registration
-// ============================================
-
 document.addEventListener("DOMContentLoaded", function () {
   applyTheme();
 
-  // If already logged in, go to dashboard
   if (getCurrentUser()) {
     window.location.href = "index.html";
     return;
@@ -23,7 +18,6 @@ document.addEventListener("DOMContentLoaded", function () {
   var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z\d]).{8,}$/;
 
-  // Clear red highlight on keypress
   requiredFields.forEach(function (field) {
     field.addEventListener("keydown", function () {
       this.classList.remove("input-error");
@@ -34,13 +28,11 @@ document.addEventListener("DOMContentLoaded", function () {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // Read form values
     var name = nameInput.value.trim();
     var email = emailInput.value.trim();
     var password = passwordInput.value;
     var confirmPassword = confirmPasswordInput.value;
 
-    // Highlight empty required fields
     var hasError = false;
     requiredFields.forEach(function (field) {
       field.classList.remove("input-error");
@@ -67,14 +59,12 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Validate email format
     if (!emailRegex.test(email)) {
       emailInput.classList.add("input-error");
       showError("Please enter a valid email address.");
       return;
     }
 
-    // Validate password strength
     if (!passwordRegex.test(password)) {
       passwordInput.classList.add("input-error");
       showError(
@@ -83,14 +73,12 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Validate passwords match
     if (password !== confirmPassword) {
       confirmPasswordInput.classList.add("input-error");
       showError("Passwords do not match.");
       return;
     }
 
-    // Check if email already exists
     var users = getFromStorage(KEYS.users) || [];
     var emailExists = users.some(function (u) {
       return u.email.toLowerCase() === email.toLowerCase();
@@ -101,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    // Create new user
     var newUser = {
       id: generateId("user"),
       name: name,
@@ -113,11 +100,9 @@ document.addEventListener("DOMContentLoaded", function () {
     users.push(newUser);
     saveToStorage(KEYS.users, users);
 
-    // Redirect to login
     window.location.href = "login.html";
   });
 
-  // Helper to show error message
   function showError(msg) {
     errorMsg.textContent = msg;
     errorMsg.style.display = "block";

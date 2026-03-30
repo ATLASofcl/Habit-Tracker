@@ -21,11 +21,7 @@ main > *:not(form) {
   }
 }
 
-/* =============================================
-   Light theme overrides (toggled via Settings)
-   ============================================= */
 
-/* --- Global --- */
 body.light-theme {
   background-color: #f5f5f5;
   color: #181716;
@@ -56,7 +52,6 @@ body.light-theme #no-habits-msg {
   color: #181716;
 }
 
-/* --- Cards / boxes shared across pages --- */
 body.light-theme .habit,
 body.light-theme .stat-box,
 body.light-theme .feedback-from,
@@ -73,7 +68,6 @@ body.light-theme .chart-container {
   color: #181716;
 }
 
-/* --- Footer (index page) --- */
 body.light-theme footer {
   background-color: #d9d9d9;
   color: #181716;
@@ -94,7 +88,6 @@ body.light-theme .increase-btn {
   color: #181716;
 }
 
-/* --- Habit table / dots --- */
 body.light-theme .habit-table {
   background-color: #e8e8e8;
 }
@@ -111,7 +104,6 @@ body.light-theme .habit-dot.current-day {
   outline-color: #181716;
 }
 
-/* --- Habit checkbox (index) --- */
 body.light-theme .habit-checkbox {
   background-color: #bbb;
 }
@@ -124,7 +116,6 @@ body.light-theme .habit-checkbox::before {
   color: #181716;
 }
 
-/* --- Context menu (index) --- */
 body.light-theme .context-menu {
   background-color: #f0f0f0;
   border-color: #ccc;
@@ -147,7 +138,6 @@ body.light-theme .context-menu-item.delete:hover {
   background-color: rgba(211, 47, 47, 0.1);
 }
 
-/* --- Forms (inputs, selects, textareas) --- */
 body.light-theme input,
 body.light-theme select,
 body.light-theme textarea {
@@ -156,7 +146,6 @@ body.light-theme textarea {
   border-color: #aaa;
 }
 
-/* --- Progress page --- */
 body.light-theme .habit-selector {
   color: #181716;
 }
@@ -190,7 +179,6 @@ body.light-theme .info-pill {
   color: #fff;
 }
 
-/* --- New-habit & Feedback pages --- */
 body.light-theme .new-habit-title {
   color: #181716;
 }
@@ -212,7 +200,6 @@ body.light-theme .color-picker-container {
   border-color: #aaa;
 }
 
-/* --- Settings page --- */
 body.light-theme h2 {
   color: #181716;
 }
@@ -221,7 +208,6 @@ body.light-theme .save-btn-container {
   background-color: #d9d9d9;
 }
 
-/* --- About page --- */
 body.light-theme .about-card {
   background-color: #d9d9d9;
   color: #181716;
@@ -232,7 +218,6 @@ body.light-theme .hyperlink a:visited {
   color: #555;
 }
 
-/* --- Contact page --- */
 body.light-theme section {
   background-color: #d9d9d9;
   color: #181716;
@@ -245,7 +230,6 @@ body.light-theme a:active {
   color: #555;
 }
 
-/* --- Login & Signup pages --- */
 body.light-theme .login-box,
 body.light-theme .signup-box,
 body.light-theme .signup-form {
@@ -268,7 +252,6 @@ body.light-theme .signup-btn {
   color: #181716;
 }
 
-/* --- Star rating (feedback) --- */
 body.light-theme .rating-container .rating label {
   color: #aaa;
 }

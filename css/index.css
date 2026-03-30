@@ -80,7 +80,6 @@ main {
   opacity: 1;
 }
 
-/* Context menu (long-press / right-click) */
 .context-menu-overlay {
   position: fixed;
   inset: 0;
@@ -230,7 +229,6 @@ footer {
   flex-shrink: 0;
 }
 
-/* Confetti celebration */
 .confetti-container {
   position: fixed;
   inset: 0;
